@@ -11,7 +11,15 @@ namespace CatalogoLibrosWeb.UI.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                FechaEntregaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                //LlenaCombo();
+                //ViewState["FacturaDetalle"] = new FacturaDetalle();
+                //ViewState["Detalle"] = new Factura().Detalle;
+                //LlenaReport();
+            }
         }
     }
 }

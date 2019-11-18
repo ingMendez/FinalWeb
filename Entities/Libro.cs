@@ -15,7 +15,7 @@ namespace Entities
         public string ISBN { get; set; }
         public int CategoriaID { get; set; }
         public string Descripcion { get; set; }
-        public int EditarialID { get; set; }
+        public int EditorialID { get; set; }
         public DateTime FechaImpresion { get; set; }
         public bool Disponibilidad { get; set; }
         public Libro()
@@ -26,7 +26,7 @@ namespace Entities
             Disponibilidad = true;
             CategoriaID = 0;
             Descripcion = " ";
-            EditarialID = 0;
+            EditorialID = 0;
             FechaImpresion = DateTime.Now;
 
         }

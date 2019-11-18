@@ -34,9 +34,8 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registros
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                 <a href="UI/Registros/rCategoria.aspx">UI/Registros/rCategoria.aspx</a>
-                                <a class="dropdown-item" href="/UI/Registros/rCategoria.aspx">Categoria</a>
-                                   <a class="dropdown-item" href="/UI/Registros/rEditorial.aspx">Editorial</a>
+                                    <a class="dropdown-item" href="/UI/Registros/rCategoria.aspx">Categoria</a>
+                                    <a class="dropdown-item" href="/UI/Registros/rEditorial.aspx">Editorial</a>
                                     <a class="dropdown-item" href="/UI/Registros/rLector.aspx">Lector</a>
                                     <a class="dropdown-item" href="/UI/Registros/rLibro.aspx">Libro</a>
                                     <a class="dropdown-item" href="/UI/Registros/rPrestamo.aspx">Prestamo</a>

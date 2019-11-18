@@ -40,6 +40,15 @@ namespace CatalogoLibrosWeb.UI.Registros {
         protected global::System.Web.UI.WebControls.TextBox FechaTextBox;
         
         /// <summary>
+        /// FechaEntregaTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox FechaEntregaTextBox;
+        
+        /// <summary>
         /// LectorDropDownList control.
         /// </summary>
         /// <remarks>
@@ -49,15 +58,6 @@ namespace CatalogoLibrosWeb.UI.Registros {
         protected global::System.Web.UI.WebControls.DropDownList LectorDropDownList;
         
         /// <summary>
-        /// LibroDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList LibroDropDownList;
-        
-        /// <summary>
         /// MatriculaTextBox control.
         /// </summary>
         /// <remarks>
@@ -65,6 +65,15 @@ namespace CatalogoLibrosWeb.UI.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox MatriculaTextBox;
+        
+        /// <summary>
+        /// LibroDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList LibroDropDownList;
         
         /// <summary>
         /// AgregarButton control.
@@ -83,6 +92,15 @@ namespace CatalogoLibrosWeb.UI.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView DetalleGridView;
+        
+        /// <summary>
+        /// TotalLibrosTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TotalLibrosTextBox;
         
         /// <summary>
         /// ButtonNuevo control.

@@ -2,74 +2,93 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- </br>
-    <div class="form-row justify-content-center">
-        <aside class="col-sm-4">
-            <div class="card text-white bg-dark mb-3">
-                <div class="card-header text-uppercase text-center">Registro Libro</div>
-                <article class="card-body">
-                    <form>
-                        <div class="col-md-4 col-md-offset-3">
-                            <div class="container">
-                                <div class="form-group">
-                                    <asp:Label ID="Label1" runat="server" Text="Id"></asp:Label>
-                                    <asp:Button class="btn btn-info btn-sm" ID="BuscarButton" runat="server" Text="Buscar"/>
-                                    <asp:TextBox class="form-control" ID="LibroIdTextBox" type="number" Text="0" runat="server" Width="86px"></asp:TextBox>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-md-4 col-md-offset-5">
-                            <div class="container">
-                                <div class="form-group">
-                                    <asp:Label ID="Label10" runat="server" Text="Fecha"></asp:Label>
-                                    <asp:TextBox class="form-control" ID="fechaTextBox" type="date" runat="server" Width="170px"></asp:TextBox>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-md-offset-3">
-                            <div class="container">
-                                <div class="form-group">
-                                    <asp:Label ID="Label2" runat="server" Text="Nombre"></asp:Label>
-                                    <asp:TextBox class="form-control" ID="nombreTextBox" runat="server" Width="263px"></asp:TextBox>
-                                    <asp:Label ID="Label4" runat="server" Text="ISBN"></asp:Label>
-                                    <asp:TextBox class="form-control" ID="ApellidoTextBox" runat="server" Width="263px"></asp:TextBox>
-                                    <asp:Label ID="Label5" runat="server" Text="Categoria"></asp:Label>
-                                    <asp:TextBox class="form-control" ID="CedulaTextBox" runat="server" Width="262px"></asp:TextBox>
-                                    <asp:Label ID="Label3" runat="server" Text="Descripcion"></asp:Label>
-                                    <asp:TextBox class="form-control" ID="DireccionTextBox" runat="server" Height="66px" TextMode="MultiLine" Width="266px"></asp:TextBox>                          
-                                    <asp:Label ID="Label6" runat="server" Text="Casa Editoria"></asp:Label>
-                                    <asp:TextBox class="form-control" ID="EditorialTextBox" runat="server" Width="261px"></asp:TextBox>
-                         
-                                </div>
-                            </div>
-                        </div>
-                           <%-- <div class="col-md-6 col-md-offset-3">
-                            <div class="container">
-                                <div class="form-group">
-                                    <asp:Label ID="Label8" runat="server" Text="De"></asp:Label>
-                                    <asp:TextBox class="form-control" ID="DireccionTextBoxi" runat="server" Height="66px" TextMode="MultiLine" Width="266px"></asp:TextBox>
-                                </div>
-                            </div>  
-                        </div>--%> 
-                      <%--  <div class="col-md-6 col-md-offset-3">
-                            <div class="container">
-                                <div class="form-group">
-                                    <asp:Label ID="Label3" runat="server" Text="Deuda"></asp:Label>
-                                    <asp:TextBox class="form-control" ID="DeudaTextBox" runat="server" ReadOnly="True" BackColor="#3399FF"></asp:TextBox>
-                                </div>
-                            </div>
-                        </div>--%>
-                        <div class="panel-footer">
-                            <div class="text-center">
-                                <div class="form-group" style="display: inline-block">
-                                    <asp:Button class="btn btn-primary" ID="nuevoButton" runat="server" Text="Nuevo"/>
-                                    <asp:Button class="btn btn-success" ID="guardarButton" runat="server" Text="Guardar"/>
-                                    <asp:Button class="btn btn-danger" ID="eliminarutton" runat="server" Text="Eliminar"/>
-                                </div>
-                            </div>
-                        </div>
-                </form>
-                </article>
+    <div class="card text-white bg-dark mb-3">
+        <div class="card-header text-uppercase text-center">Registro Libro</div>
+        <article class="card-body">
+            <div class="rounded  " style="background-color: #C0C0C0; text-align: center;">
             </div>
+            </br>
+            </br>
+           <div class="panel-body">
+           <div class="form-horizontal col-md-12" role="form">
+
+            <%--Id--%>
+            <div class="form-group row control-label" style="align-items: center;">
+                <label style="font-size: medium;" for="IdTextBox" class="col-md-1   input-sm">Id</label>
+                <div class="col-md-2 col-sm-6 col-xs-3">
+                    <asp:TextBox ID="IdTextBox" runat="server" placeholder="0" class="form-control input-sm" type="number" Style="font-size: medium"></asp:TextBox>
+                </div>
+                <div class="col-md-1 col-sm-2 col-xs-4">
+                    <asp:Button ID="BuscarButton" runat="server" Text="Buscar" ValidationGroup="ValidacionBE" class="btn btn-info btn-md" />
+                </div>
+                <label style="font-size: medium;" for="FechaTextbox" class="col-md-1   input-sm">Fecha</label>
+                <div class="col-md-2 col-sm-3 col-xs-0">
+                    <asp:TextBox ID="FechaTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Date"></asp:TextBox>
+                </div>
+            </div>
+            <%--hasta aqui--%>
+            <%--Nombre--%>
+            <div class="form-group row control-label" style="align-items: center;">
+                <label for="NombreTextBox" class="col-md-1 input-sm" style="font-size: medium">Nombre</label>
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <asp:TextBox ID="NombreTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>
+                </div>
+            </div>
+            <%--hasta aqui--%>
+            <%--ISBN--%>
+            <div class="form-group row control-label" style="align-items: center;">
+                <label style="font-size: medium;" for="ISBNTextBox" class="col-md-1   input-sm">ISBN</label>
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <asp:TextBox ID="ISBNTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" ></asp:TextBox>
+                </div>
+            </div>
+            <%--hasta aqui--%>
+            <%--Categoria--%>
+            <div class="form-group  row control-label" style="align-items: center;">
+                <label for="CategoriaDropDownList" class="col-md-1 input-sm" style="font-size: medium">Categoria</label>
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <asp:DropDownList ID="CategoriaDropDownList" class="form-control input-sm " Style="font-size: medium" runat="server"></asp:DropDownList>
+                </div>
+                <div class="col-md-1 col-sm-2 col-xs-4">
+                    <asp:Button ID="AgregarButton" runat="server" Text="+" ValidationGroup="ValidacionGM" class="btn btn-warning btn-md" Font-Size="Medium" />
+                </div>
+            </div>
+            <%--hasta aqui--%>
+        </div>
+    </div>
+            <div class="panel-body">
+                <div class="form-horizontal col-md-12" role="form">
+                    <%--TotalLibros--%>
+                    <div class="form-group row control-label" style="align-items: center;">
+                        <label style="font-size: small;" for="DescripcionTextBox" class="col-md-1   input-sm">Descripcion</label>
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            <asp:TextBox ID="DescripcionTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>
+                        </div>
+                    </div>
+                    <%--hasta aqui--%>
+                    <%--Categoria--%>
+                    <div class="form-group  row control-label" style="align-items: center;">
+                        <label for="EditorialDropDownList" class="col-md-1 input-sm" style="font-size: medium">Editorial</label>
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            <asp:DropDownList ID="EditorialDropDownList" class="form-control input-sm " Style="font-size: medium" runat="server"></asp:DropDownList>
+                        </div>
+                        <div class="col-md-1 col-sm-2 col-xs-4">
+                            <asp:Button ID="AgregarEditButton" runat="server" Text="+" ValidationGroup="ValidacionGM" class="btn btn-warning btn-md" Font-Size="Medium" />
+                        </div>
+                    </div>
+                    <%--hasta aqui--%>
+                </div>
+            </div>
+            <%--Botones--%>
+            <div class="panel">
+                <div class="text-center">
+                    <div class="form-group">
+                        <asp:Button ID="ButtonNuevo" runat="server" Text="Nuevo" class="btn btn-primary" />
+                        <asp:Button ID="ButtonGuardar" runat="server" Text="Guardar" class="btn btn-success" />
+                        <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" class="btn btn-danger" />
+                    </div>
+                </div>
+            </div>
+            <%--hasta aqui--%>
     </div>
 </asp:Content>

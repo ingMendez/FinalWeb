@@ -130,6 +130,9 @@ namespace BLL
             _contexto.Dispose();
         }
 
-
+       /*public object GetList(Expression<Func<global::Entities.Libro, bool>> filtrar)
+        {
+            throw new NotImplementedException();
+        }*/
     }
 }

@@ -9,9 +9,9 @@ namespace Entities
         [Key]
         public int ID { get; set; }
         public int PrestamoID { get; set; }
-        public int LectorID { get; set; }
         public int LibroID { get; set; }
-        public int Matricula { get; set; }
+        public string Descripcion { get; set; }
+        public DateTime FechaEntrega { get; set; }
 
         [ForeignKey("PretamoID")]
         public virtual Prestamo _pretamo { get; set; }
@@ -23,18 +23,18 @@ namespace Entities
         {
             ID = 0;
             PrestamoID = 0;
-            LectorID = 0;
             LibroID = 0;
-            Matricula = 0;
+            Descripcion = string.Empty;
+            FechaEntrega = DateTime.Now;
         }
 
-        public PrestamoDetalle(int id, int prestamoid, int matricula, int libroId, int lectorid)
+        public PrestamoDetalle(int id, int prestamoid, int libroId, string descripcion, DateTime fechaEntrega)
         {
             ID = id;
             PrestamoID = prestamoid;
-            Matricula = matricula;
             LibroID = libroId;
-            LectorID = lectorid;
+            Descripcion = descripcion;
+            FechaEntrega = fechaEntrega;
         }
     }
 }

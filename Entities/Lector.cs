@@ -13,7 +13,7 @@ namespace Entities
         [Key]
         public int LectorID { get; set; }
         public string Nombre { get; set; }
-        public string Apellido { get; set; }
+        public int Matricula { get; set; }
         public string Cedula { get; set; }
         public string Telefono { get; set; }
         public DateTime Fecha { get; set; }
@@ -23,7 +23,7 @@ namespace Entities
         {
             LectorID = 0;
             Nombre = string.Empty;
-            Apellido = string.Empty;
+            Matricula = 0;
             Cedula = string.Empty;
             Direccion = string.Empty;
             Telefono = string.Empty;

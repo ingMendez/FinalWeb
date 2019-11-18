@@ -9,6 +9,7 @@ namespace CatalogoLibrosWeb.UI.Registros
 {
     public partial class rEditorial : System.Web.UI.Page
     {
+       // public Editorial editorial = new Editorial();
         protected void Page_Load(object sender, EventArgs e)
         {
 
