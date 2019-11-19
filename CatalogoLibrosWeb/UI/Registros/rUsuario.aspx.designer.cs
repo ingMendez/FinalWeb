@@ -13,13 +13,13 @@ namespace CatalogoLibrosWeb.UI.Registros {
     public partial class rUsuario {
         
         /// <summary>
-        /// Label1 control.
+        /// IdTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.TextBox IdTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -31,67 +31,22 @@ namespace CatalogoLibrosWeb.UI.Registros {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// UsuarioIdTextBox control.
+        /// FechaTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UsuarioIdTextBox;
+        protected global::System.Web.UI.WebControls.TextBox FechaTextBox;
         
         /// <summary>
-        /// Label10 control.
+        /// NombreTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label10;
-        
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// nombreTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreTextBox;
-        
-        /// <summary>
-        /// Label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
-        /// EmailTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EmailTextBox;
-        
-        /// <summary>
-        /// Label5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.TextBox NombreTextBox;
         
         /// <summary>
         /// TelefonoTextBox control.
@@ -103,13 +58,13 @@ namespace CatalogoLibrosWeb.UI.Registros {
         protected global::System.Web.UI.WebControls.TextBox TelefonoTextBox;
         
         /// <summary>
-        /// Label6 control.
+        /// EmailTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.TextBox EmailTextBox;
         
         /// <summary>
         /// ContraseniaTextBox control.
@@ -121,48 +76,48 @@ namespace CatalogoLibrosWeb.UI.Registros {
         protected global::System.Web.UI.WebControls.TextBox ContraseniaTextBox;
         
         /// <summary>
-        /// Label8 control.
+        /// Administrator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label8;
+        protected global::System.Web.UI.WebControls.RadioButton Administrator;
         
         /// <summary>
-        /// DireccionTextBox control.
+        /// Usuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DireccionTextBox;
+        protected global::System.Web.UI.WebControls.RadioButton Usuario;
         
         /// <summary>
-        /// nuevoButton control.
+        /// ButtonNuevo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button nuevoButton;
+        protected global::System.Web.UI.WebControls.Button ButtonNuevo;
         
         /// <summary>
-        /// guardarButton control.
+        /// ButtonGuardar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button guardarButton;
+        protected global::System.Web.UI.WebControls.Button ButtonGuardar;
         
         /// <summary>
-        /// eliminarutton control.
+        /// ButtonEliminar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button eliminarutton;
+        protected global::System.Web.UI.WebControls.Button ButtonEliminar;
     }
 }

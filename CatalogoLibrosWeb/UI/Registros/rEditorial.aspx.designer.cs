@@ -22,31 +22,31 @@ namespace CatalogoLibrosWeb.UI.Registros {
         protected global::System.Web.UI.WebControls.TextBox IdTextBox;
         
         /// <summary>
-        /// Button1 control.
+        /// BuscarButton_Click control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button BuscarButton_Click;
         
         /// <summary>
-        /// TextBox1 control.
+        /// FechaTextbox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox FechaTextbox;
         
         /// <summary>
-        /// TextBox2 control.
+        /// NombreTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox NombreTextBox;
         
         /// <summary>
         /// DireccionTextBox control.

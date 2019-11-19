@@ -20,20 +20,20 @@
                     <asp:TextBox ID="IdTextBox" runat="server" placeholder="0" class="form-control input-sm" type="number" Style="font-size: medium"></asp:TextBox>
                 </div>
                 <div class="col-md-1 col-sm-2 col-xs-4">
-                    <asp:Button ID="Button1" runat="server" Text="Buscar" ValidationGroup="ValidacionBE" class="btn btn-info btn-md" />
+                    <asp:Button ID="BuscarButton" runat="server" Text="Buscar" ValidationGroup="ValidacionBE" class="btn btn-info btn-md" OnClick="BuscarButton_Click" />
                 </div>
                 <label style="font-size: small;" for="FechaTextbox" class="col-md-1   input-sm">Fecha</label>
                 <div class="col-md-2 col-sm-3 col-xs-0">
-                    <asp:TextBox ID="TextBox1" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Date"></asp:TextBox>
+                    <asp:TextBox ID="FechaTextbox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Date"></asp:TextBox>
                 </div>
             </div>
             <%--hasta aqui--%>
 
             <%--Nombre--%>
             <div class="form-group row control-label" style="align-items: center;">
-                <label style="font-size: small;" for="NombreTextBox" class="col-md-1 input-sm" style="font-size: medium">Nombre </label>
+                <label style="font-size: small;" for="NombreTextBox" class="col-md-1 input-sm">Nombre </label>
                 <div class="col-md-3 col-sm-6 col-xs-6">
-                    <asp:TextBox ID="TextBox2" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>
+                    <asp:TextBox ID="NombreTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>
                 </div>
             </div>
             <%--hasta aqui--%>
@@ -52,9 +52,9 @@
             <div class="panel">
                 <div class="text-center">
                     <div class="form-group">
-                        <asp:Button ID="ButtonNuevo" runat="server" Text="Nuevo" class="btn btn-primary" />
-                        <asp:Button ID="ButtonGuardar" runat="server" Text="Guardar" class="btn btn-success" />
-                        <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" class="btn btn-danger" />
+                        <asp:Button ID="ButtonNuevo" runat="server" Text="Nuevo" class="btn btn-primary" OnClick="ButtonNuevo_Click"/>
+                        <asp:Button ID="ButtonGuardar" runat="server" Text="Guardar" class="btn btn-success" OnClick="ButtonGuardar_Click"/>
+                        <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" class="btn btn-danger" OnClick="ButtonEliminar_Click"/>
                     </div>
                 </div>
             </div>

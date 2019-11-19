@@ -15,6 +15,7 @@ namespace CatalogoLibrosWeb.UI.Registros
             {
                 FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
                 FechaEntregaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                IdTextBox.Text = "0";
                 //LlenaCombo();
                 //ViewState["FacturaDetalle"] = new FacturaDetalle();
                 //ViewState["Detalle"] = new Factura().Detalle;

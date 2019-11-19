@@ -128,6 +128,10 @@
     <Content Include="Content\toastr.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Imagenes\5ab10d4485600a3d195f6753.jpg" />
+    <Content Include="Imagenes\En-el-mundo-existen-150.000.000-de-libros…-y-estos-son-los-100-mejores.jpg" />
+    <Content Include="Imagenes\shutterstock_522019972.jpg" />
+    <Content Include="Imagenes\_103401128_gettyimages-1028739954.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Logon.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />

@@ -13,7 +13,7 @@ namespace DAL
         public DbSet<Lector> Lectores { get; set; }
         public DbSet<Libro> Libro { get; set; }
         public DbSet<Prestamo> Prestamo { get; set; }
-        public DbSet<TipoEditorial> Editorial { get; set; }
+        public DbSet<Editorial> Editorial { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Administrador> Administrador { get; set; }
         public DbSet<Categoria> _categoria { get; set; }

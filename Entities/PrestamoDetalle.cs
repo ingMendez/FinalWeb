@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities
@@ -13,11 +14,11 @@ namespace Entities
         public string Descripcion { get; set; }
         public DateTime FechaEntrega { get; set; }
 
-        [ForeignKey("PretamoID")]
+       /* [ForeignKey("PretamoID")]
         public virtual Prestamo _pretamo { get; set; }
 
         [ForeignKey("LibroID")]
-        public virtual Libro Libro { get; set; }
+        public virtual Libro Libro { get; set; }*/
 
         public PrestamoDetalle()
         {

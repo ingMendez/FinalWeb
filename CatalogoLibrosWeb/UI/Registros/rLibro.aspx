@@ -50,7 +50,7 @@
                     <asp:DropDownList ID="CategoriaDropDownList" class="form-control input-sm " Style="font-size: medium" runat="server"></asp:DropDownList>
                 </div>
                 <div class="col-md-1 col-sm-2 col-xs-4">
-                    <asp:Button ID="AgregarButton" runat="server" Text="+" ValidationGroup="ValidacionGM" class="btn btn-warning btn-md" Font-Size="Medium" />
+                    <asp:Button ID="AgregarButton" runat="server" Text="+" class="btn btn-warning btn-md" Font-Size="Medium" OnClick="AgregarButton_Click" />
                 </div>
             </div>
             <%--hasta aqui--%>
@@ -73,7 +73,7 @@
                             <asp:DropDownList ID="EditorialDropDownList" class="form-control input-sm " Style="font-size: medium" runat="server"></asp:DropDownList>
                         </div>
                         <div class="col-md-1 col-sm-2 col-xs-4">
-                            <asp:Button ID="AgregarEditButton" runat="server" Text="+" ValidationGroup="ValidacionGM" class="btn btn-warning btn-md" Font-Size="Medium" />
+                            <asp:Button ID="AgregarEditButton" runat="server" Text="+" class="btn btn-warning btn-md" Font-Size="Medium" OnClick="AgregarEditButton_Click" />
                         </div>
                     </div>
                     <%--hasta aqui--%>
