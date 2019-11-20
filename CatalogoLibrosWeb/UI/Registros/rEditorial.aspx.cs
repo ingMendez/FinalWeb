@@ -1,13 +1,7 @@
 ﻿using BLL;
 using CatalogoLibrosWeb.Utilitarios;
-using DAL;
 using Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace CatalogoLibrosWeb.UI.Registros
 {
@@ -16,8 +10,20 @@ namespace CatalogoLibrosWeb.UI.Registros
         public Editorial editorial = new Editorial();
         protected void Page_Load(object sender, EventArgs e)
         {
-            FechaTextbox.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            IdTextBox.Text = "0";
+            if (!IsPostBack)
+            {
+                FechaTextbox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                IdTextBox.Text = "0";
+            }
+
+        }
+        private bool ExisteBasedeDatos()
+        {
+            Editorial editorial = new Editorial();
+            int id = Convert.ToInt32(IdTextBox.Text);
+            RepositorioBase<Editorial> repositorio = new RepositorioBase<Editorial>();
+            editorial = repositorio.Buscar(id);
+            return editorial != null;
         }
         private Editorial LlenaClase()
         {
@@ -26,7 +32,7 @@ namespace CatalogoLibrosWeb.UI.Registros
             editorial.EditorialID = Utils.ToInt(IdTextBox.Text);
             editorial.Nombre = NombreTextBox.Text;
             editorial.Dirrecion = DireccionTextBox.Text;
-             bool resultado = DateTime.TryParse(FechaTextbox.Text,out DateTime fecha);
+            bool resultado = DateTime.TryParse(FechaTextbox.Text, out DateTime fecha);
             editorial.Fecha = fecha;
             return editorial;
         }
@@ -35,10 +41,9 @@ namespace CatalogoLibrosWeb.UI.Registros
         {
             IdTextBox.Text = editorial.EditorialID.ToString();
             FechaTextbox.Text = editorial.Fecha.ToString("yyyy-MM-dd");
-            IdTextBox.Text = editorial.ToString();
             NombreTextBox.Text = editorial.Nombre;
             DireccionTextBox.Text = editorial.Dirrecion;
-          //FechaTextbox.Text = editorial.Fecha.ToString("yyyy-MM-dd");
+            //FechaTextbox.Text = editorial.Fecha.ToString("yyyy-MM-dd");
         }
 
         protected void Limpiar()
@@ -52,7 +57,7 @@ namespace CatalogoLibrosWeb.UI.Registros
         private bool validar()
         {
             bool estado = false;
-            if (string.IsNullOrWhiteSpace(IdTextBox.Text)) 
+            if (string.IsNullOrWhiteSpace(IdTextBox.Text))
             {
                 Utils.ShowToastr(this, "Debe de estar en cero.", "Error", "Error");
                 estado = true;
@@ -71,74 +76,77 @@ namespace CatalogoLibrosWeb.UI.Registros
 
             return estado;
         }
-   
+
 
         protected void ButtonNuevo_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void BuscarButton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Editorial> repositorio = new RepositorioBase<Editorial>();
-            int id = Convert.ToInt32(IdTextBox.Text);
-            Editorial editorial = repositorio.Buscar(id);
-            if (editorial != null)
+            if (String.IsNullOrWhiteSpace(IdTextBox.Text))
             {
-                LlenaCampo(editorial);
-                Utils.ShowToastr(this, "Busqueda exitosa", "Exito", "success");               
+                Utils.ShowToastr(this, "Id no puede estar vacío", "Error", "error");
+
             }
             else
             {
-                Utils.ShowToastr(this, "No se encontró", "Error", "error");
-                Limpiar();
+                int id = Convert.ToInt32(IdTextBox.Text);
+
+
+                Editorial editorial = repositorio.Buscar(id);
+                if (editorial != null)
+                {
+                    LlenaCampo(editorial);
+                    Utils.ShowToastr(this, "Busqueda exitosa", "Exito", "success");
+                }
+                else
+                {
+                    Utils.ShowToastr(this, "No se encontró", "Error", "error");
+                    Limpiar();
+                }
             }
         }
 
         protected void ButtonGuardar_Click(object sender, EventArgs e)
         {
-            RepositorioBase<Editorial> rep = new RepositorioBase<Editorial>();
-            bool estado = false;
-            Editorial editorial = new Editorial();
-
             if (validar())
             {
                 return;
             }
             else
             {
-                editorial = LlenaClase();
+                RepositorioBase<Editorial> repositorio = new RepositorioBase<Editorial>();
+                bool paso = false;
+                Editorial edit = LlenaClase();
+
                 if (Convert.ToInt32(IdTextBox.Text) == 0)
                 {
-                    estado = rep.Guardar(editorial);
+                    paso = repositorio.Guardar(edit);
                     Utils.ShowToastr(this, "Guardado", "Exito", "success");
                     Limpiar();
                 }
                 else
                 {
-                    RepositorioBase<Editorial> repo = new RepositorioBase<Editorial>();
-                    int id = Convert.ToInt32(IdTextBox.Text);
-                    Editorial edit = new Editorial();
-                    edit = repo.Buscar(id);
-                    if(edit != null)
+                    if (!ExisteBasedeDatos())
                     {
-                        estado = repo.Modificar(LlenaClase());
-                        Utils.ShowToastr(this, "Modificado", "Exito", "success");
+                        Utils.ShowToastr(this, "No existe", "Error", "Error");
+                        return;
                     }
                     else
                     {
-                        Utils.ShowToastr(this, "Id no existe", "Error", "error");
+                        paso = repositorio.Modificar(edit);
+                        Utils.ShowToastr(this, "Modificado", "Exito", "success");
+
                     }
                 }
-                if (estado)
+                if (paso)
                 {
                     Limpiar();
                 }
-                else
-                {
-                    Utils.ShowToastr(this, "No se pudo guardar", "Error", "error");
-                }
             }
+          
         }
 
         protected void ButtonEliminar_Click(object sender, EventArgs e)
@@ -147,7 +155,7 @@ namespace CatalogoLibrosWeb.UI.Registros
             int id = Utils.ToInt(IdTextBox.Text);
             var editorial = rep.Buscar(id);
 
-            if(editorial != null)
+            if (editorial != null)
             {
                 if (rep.Eliminar(id))
                 {
@@ -164,7 +172,8 @@ namespace CatalogoLibrosWeb.UI.Registros
             {
                 Utils.ShowToastr(this, "No existe", "Error", "error");
             }
-               
+
         }
+
     }
 }

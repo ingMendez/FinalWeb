@@ -45,9 +45,9 @@ namespace CatalogoLibrosWeb.UI.Registros
             FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             NombreTextBox.Text = "";
             ISBNTextBox.Text = string.Empty;
-            CategoriaDropDownList.Text = string.Empty;
+            CategoriaDropDownList.SelectedIndex = 0;
             DescripcionTextBox.Text = string.Empty;
-            EditorialDropDownList.Text = string.Empty;
+            EditorialDropDownList.SelectedIndex = 0;
 
         }
         private Libro LlenaClase()
@@ -135,6 +135,130 @@ namespace CatalogoLibrosWeb.UI.Registros
         protected void AgregarEditButton_Click(object sender, EventArgs e)
         {
             Page.ClientScript.RegisterStartupScript(this.GetType(), "OpenWindow", "window.open('http://localhost:64760/UI/Registros/rEditorial.aspx','_newtab');", true);
+        }
+
+        private bool ExisteBasedeDatos()
+        {
+            Libro libro = new Libro();
+            int id = Convert.ToInt32(IdTextBox.Text);
+            RepositorioBase<Libro> repositorio = new RepositorioBase<Libro>();
+            libro = repositorio.Buscar(id);
+            return libro != null;
+        }
+
+
+
+
+        protected void BuscarButton_Click(object sender, EventArgs e)
+        {
+
+            RepositorioBase<Libro> repositorio = new RepositorioBase<Libro>();
+            if (String.IsNullOrWhiteSpace(IdTextBox.Text))
+            {
+                Utils.ShowToastr(this, "Id no puede estar vacío", "Error", "error");
+
+            }
+            else
+            {
+                int id = Convert.ToInt32(IdTextBox.Text);
+
+
+                Libro libros = repositorio.Buscar(id);
+                if (libros != null)
+                {
+                    LlenaCampos(libros);
+                    Utils.ShowToastr(this, "Busqueda exitosa", "Exito", "success");
+                }
+                else
+                {
+                    Utils.ShowToastr(this, "No se encontró", "Error", "error");
+                    LimpiaObjetos();
+                }
+            }
+        }
+
+
+
+
+        protected void ButtonNuevo_Click(object sender, EventArgs e)
+        {
+            LimpiaObjetos();
+
+        }
+
+        protected void ButtonGuardar_Click(object sender, EventArgs e)
+        {
+
+
+            if (HayErrores())
+            {
+                return;
+            }
+            else
+            {
+                RepositorioBase<Libro> repositorio = new RepositorioBase<Libro>();
+                bool paso = false;
+                Libro libros = new Libro();
+                libros = LlenaClase();
+
+                if (Convert.ToInt32(IdTextBox.Text) == 0)
+                {
+                    paso = repositorio.Guardar(libros);
+                    Utils.ShowToastr(this, "Guardado", "Exito", "success");
+                    LimpiaObjetos();
+                }
+                else
+                {
+                    if (!ExisteBasedeDatos())
+                    {
+                        Utils.ShowToastr(this,"No existe", "Error","Error");
+                        return;
+                    }
+                    else
+                    {
+                        paso = repositorio.Modificar(libros);
+                        Utils.ShowToastr(this, "Modificado", "Exito", "success");
+
+                    }
+                }
+                if (paso)
+                {
+                    LimpiaObjetos();
+                }
+            }
+        }
+
+        protected void ButtonEliminar_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Libro> rep = new RepositorioBase<Libro>();
+            if (String.IsNullOrWhiteSpace(IdTextBox.Text))
+            {
+                Utils.ShowToastr(this, "Id no puede estar vacío", "Error", "error");
+
+            }
+            else
+            {
+                int id = Utils.ToInt(IdTextBox.Text);
+                var editorial = rep.Buscar(id);
+
+                if (editorial != null)
+                {
+                    if (rep.Eliminar(id))
+                    {
+                        Utils.ShowToastr(this, "Eliminado", "Exito", "success");
+                        LimpiaObjetos();
+                    }
+                    else
+                    {
+                        Utils.ShowToastr(this, "No se pudo eliminar", "Error", "error");
+                    }
+
+                }
+                else
+                {
+                    Utils.ShowToastr(this, "No existe", "Error", "error");
+                }
+            }
         }
     }
 }

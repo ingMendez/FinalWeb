@@ -39,6 +39,14 @@ namespace CatalogoLibrosWeb.UI.Registros
             NombreTextBox.Text = " ";
             DescripcionTextBox.Text = " ";
         }
+        private bool ExisteBasedeDatos()
+        {
+            Categoria categoria = new Categoria();
+            int id = Convert.ToInt32(IdTextBox.Text);
+            RepositorioBase<Categoria> repositorio = new RepositorioBase<Categoria>();
+            categoria = repositorio.Buscar(id);
+            return categoria != null;
+        }
         private bool validar()
         {
             bool estado = false;
@@ -68,48 +76,42 @@ namespace CatalogoLibrosWeb.UI.Registros
 
         protected void ButtonGuardar_Click(object sender, EventArgs e)
         {
-            RepositorioBase<Categoria> rep = new RepositorioBase<Categoria>();
-            bool estado = false;
-            Categoria categoria = new Categoria();
-
             if (validar())
             {
                 return;
             }
             else
             {
-                categoria = LlenaClase();
+                RepositorioBase<Categoria> repositorio = new RepositorioBase<Categoria>();
+                bool paso = false;
+                Categoria categoria = LlenaClase();
+
                 if (Convert.ToInt32(IdTextBox.Text) == 0)
                 {
-                    estado = rep.Guardar(categoria);
+                    paso = repositorio.Guardar(categoria);
                     Utils.ShowToastr(this, "Guardado", "Exito", "success");
                     Limpiar();
                 }
                 else
                 {
-                    RepositorioBase<Categoria> repo = new RepositorioBase<Categoria>();
-                    int id = Convert.ToInt32(IdTextBox.Text);
-                    Categoria cat = new Categoria();
-                    cat = repo.Buscar(id);
-                    if (cat != null)
+                    if (!ExisteBasedeDatos())
                     {
-                        estado = repo.Modificar(LlenaClase());
-                        Utils.ShowToastr(this, "Modificado", "Exito", "success");
+                        Utils.ShowToastr(this, "No existe", "Error", "Error");
+                        return;
                     }
                     else
                     {
-                        Utils.ShowToastr(this, "Id no existe", "Error", "error");
+                        paso = repositorio.Modificar(categoria);
+                        Utils.ShowToastr(this, "Modificado", "Exito", "success");
+
                     }
                 }
-                if (estado)
+                if (paso)
                 {
                     Limpiar();
                 }
-                else
-                {
-                    Utils.ShowToastr(this, "No se pudo guardar", "Error", "error");
-                }
             }
+
 
         }
 
@@ -143,18 +145,29 @@ namespace CatalogoLibrosWeb.UI.Registros
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Categoria> repositorio = new RepositorioBase<Categoria>();
-            int id = Convert.ToInt32(IdTextBox.Text);
-            Categoria categoria = repositorio.Buscar(id);
-            if (categoria != null)
+            if (String.IsNullOrWhiteSpace(IdTextBox.Text))
             {
-                Utils.ShowToastr(this, "Busqueda exitosa", "Exito", "success");
-                LlenaCampo(categoria);
+                Utils.ShowToastr(this, "Id no puede estar vacío", "Error", "error");
+
             }
             else
             {
-                Utils.ShowToastr(this, "No se encontró", "Error", "error");
-            }
-        }
+                int id = Convert.ToInt32(IdTextBox.Text);
 
+
+                Categoria categoria = repositorio.Buscar(id);
+                if (categoria != null)
+                {
+                    LlenaCampo(categoria);
+                    Utils.ShowToastr(this, "Busqueda exitosa", "Exito", "success");
+                }
+                else
+                {
+                    Utils.ShowToastr(this, "No se encontró", "Error", "error");
+                    Limpiar();
+                }
+            }
+
+        }
     }
 }

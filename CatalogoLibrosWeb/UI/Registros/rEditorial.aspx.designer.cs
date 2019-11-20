@@ -22,13 +22,13 @@ namespace CatalogoLibrosWeb.UI.Registros {
         protected global::System.Web.UI.WebControls.TextBox IdTextBox;
         
         /// <summary>
-        /// BuscarButton_Click control.
+        /// BuscarB_Click control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BuscarButton_Click;
+        protected global::System.Web.UI.WebControls.Button BuscarB_Click;
         
         /// <summary>
         /// FechaTextbox control.

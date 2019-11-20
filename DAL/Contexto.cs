@@ -10,7 +10,7 @@ namespace DAL
 {
     public class Contexto : DbContext
     {
-        public DbSet<Lector> Lectores { get; set; }
+        public DbSet<Lector> lector { get; set; }
         public DbSet<Libro> Libro { get; set; }
         public DbSet<Prestamo> Prestamo { get; set; }
         public DbSet<Editorial> Editorial { get; set; }
