@@ -2,6 +2,7 @@
 using CatalogoLibrosWeb.Utilitarios;
 using Entities;
 using System;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Web.UI;
 
@@ -42,7 +43,7 @@ namespace CatalogoLibrosWeb.UI.Registros
         {
             IdTextBox.Text = "0";
             FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            NombreTextBox.Text = "0";
+            NombreTextBox.Text = "";
             ISBNTextBox.Text = string.Empty;
             CategoriaDropDownList.Text = string.Empty;
             DescripcionTextBox.Text = string.Empty;
@@ -58,16 +59,15 @@ namespace CatalogoLibrosWeb.UI.Registros
             libro.FechaImpresion = fecha;
             libro.NombreLibro = NombreTextBox.Text;
             libro.ISBN = ISBNTextBox.Text;
-            libro.CategoriaID = CategoriaDropDownList.SelectedIndex;
+            libro.CategoriaID = Convert.ToInt32(CategoriaDropDownList.SelectedValue);
             libro.Descripcion = DescripcionTextBox.Text;
-            libro.EditorialID = EditorialDropDownList.SelectedIndex;
+            libro.EditorialID = Convert.ToInt32(EditorialDropDownList.SelectedValue);
 
             return libro;
         }
 
         public void LlenaCampos(Libro libro)
         {
-            LimpiaObjetos();
             IdTextBox.Text = libro.LibroID.ToString();
             FechaTextBox.Text = libro.FechaImpresion.ToString("yyyy-MM-dd");
             NombreTextBox.Text = libro.NombreLibro;
@@ -75,6 +75,56 @@ namespace CatalogoLibrosWeb.UI.Registros
             CategoriaDropDownList.SelectedValue = libro.CategoriaID.ToString();
             DescripcionTextBox.Text = libro.Descripcion;
             EditorialDropDownList.SelectedValue = libro.EditorialID.ToString();
+        }
+
+        private bool HayErrores()
+        {
+            bool HayErrores = false;
+            filtrar = t => t.ISBN.Equals(ISBNTextBox.Text);
+            List<Libro> lista = new List<Libro>();
+            lista = repositorio.GetList(filtrar);
+
+            if (String.IsNullOrWhiteSpace(IdTextBox.Text))
+            {
+                Utils.ShowToastr(this, "Id no puede estar vacío", "Error", "error");
+                HayErrores = true;
+            }
+            if (Utils.ToIntObjetos(CategoriaDropDownList.SelectedIndex) < 0)
+            {
+                Utils.ShowToastr(this, "Debe tener al menos una Categoria guardado", "Error", "error");
+                HayErrores = true;
+            }
+            if (Utils.ToIntObjetos(EditorialDropDownList.SelectedIndex) < 0)
+            {
+                Utils.ShowToastr(this, "Debe tener al menos un Editorial guardado", "Error", "error");
+                HayErrores = true;
+            }
+            if (lista.Count != 0)
+            {
+                Utils.ShowToastr(this, "Este ISBN ya existe", "Error", "error");
+                HayErrores = true;
+            }
+            if (ISBNTextBox.Text.Length < 10 || ISBNTextBox.Text.Length > 13)
+            {
+                Utils.ShowToastr(this, "No es un ISBN corrrecto", "Error", "error");
+                HayErrores = true;
+            }
+            if (String.IsNullOrWhiteSpace(ISBNTextBox.Text))
+            {
+                Utils.ShowToastr(this, "ISBN no puede estar vacío", "Error", "error");
+                HayErrores = true;
+            }
+            if (String.IsNullOrWhiteSpace(NombreTextBox.Text))
+            {
+                Utils.ShowToastr(this, "Nombre no puede estar vacío", "Error", "error");
+                HayErrores = true;
+            }
+            if (String.IsNullOrWhiteSpace(DescripcionTextBox.Text))
+            {
+                Utils.ShowToastr(this, "Descripcion no puede estar vacío", "Error", "error");
+                HayErrores = true;
+            }
+            return HayErrores;
         }
 
         protected void AgregarButton_Click(object sender, EventArgs e)
