@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -67,6 +69,17 @@ namespace CatalogoLibrosWeb.Utilitarios
         {
             page.ClientScript.RegisterStartupScript(page.GetType(), "toastr_message",
                  String.Format("toastr.{0}('{1}', '{2}');", type.ToLower(), message, title), addScriptTags: true);
+        }
+        public static string Nombres(int IdLista)
+        {
+            RepositorioBase<Libro> repositorio = new RepositorioBase<Libro>();
+            Libro lib = new Libro();
+            int id = IdLista;
+            lib = repositorio.Buscar(id);
+
+            string desc = lib.NombreLibro;
+
+            return desc;
         }
     }
 }

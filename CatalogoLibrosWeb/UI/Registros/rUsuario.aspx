@@ -32,7 +32,7 @@
             <div class="form-group row control-label" style="align-items: center;">
                 <label for="NombreTextBox" class="col-md-1 input-sm" style="font-size: medium">Nombre</label>
                 <div class="col-md-3 col-sm-6 col-xs-6">
-                    <asp:TextBox ID="NombreTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>
+                    <asp:TextBox ID="NombreTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" Font-Overline="False"></asp:TextBox>
                 </div>
             </div>
             <%--hasta aqui--%>

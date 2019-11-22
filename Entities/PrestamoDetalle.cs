@@ -8,7 +8,7 @@ namespace Entities
     public class PrestamoDetalle
     {
         [Key]
-        public int ID { get; set; }
+        public int IDDetalle { get; set; }
         public int PrestamoID { get; set; }
         public int LibroID { get; set; }
         public string Descripcion { get; set; }
@@ -22,7 +22,7 @@ namespace Entities
 
         public PrestamoDetalle()
         {
-            ID = 0;
+            IDDetalle = 0;
             PrestamoID = 0;
             LibroID = 0;
             Descripcion = string.Empty;
@@ -31,7 +31,7 @@ namespace Entities
 
         public PrestamoDetalle(int id, int prestamoid, int libroId, string descripcion, DateTime fechaEntrega)
         {
-            ID = id;
+            IDDetalle = id;
             PrestamoID = prestamoid;
             LibroID = libroId;
             Descripcion = descripcion;

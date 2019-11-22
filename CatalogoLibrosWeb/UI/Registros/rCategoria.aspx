@@ -20,7 +20,7 @@
                     <asp:TextBox ID="IdTextBox" runat="server" placeholder="0" class="form-control input-sm" type="number" Style="font-size: medium"></asp:TextBox>
                 </div>
                 <div class="col-md-1 col-sm-2 col-xs-4">
-                    <asp:Button ID="BuscarButton" runat="server" Text="Buscar" ValidationGroup="ValidacionBE" class="btn btn-info btn-md" OnClick="BuscarButton_Click" />
+                    <asp:Button ID="BuscarButton" runat="server" Text="Buscar" ValidationGroup="ValidacionBE" class="btn btn-info btn-md" OnClick="BuscarButton_Click"/>
                 </div>
                 <label style="font-size: small;" for="FechaTextbox" class="col-md-1   input-sm">Fecha</label>
                 <div class="col-md-2 col-sm-3 col-xs-0">

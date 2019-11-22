@@ -101,6 +101,11 @@ namespace CatalogoLibrosWeb.UI.Registros
                 Utils.ShowToastr(this, "No es una contraseña corrrecta", "Error", "error");
                 HayErrores = true;
             }
+            if (TelefonoTextBox.Text.Length !=10)
+            {
+                Utils.ShowToastr(this, "No es es correcto el numero", "Error", "error");
+                HayErrores = true;
+            }
             if (lista.Count != 0)
             {
                 Utils.ShowToastr(this, "Esta Email ya existe", "Error", "error");

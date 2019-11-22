@@ -10,9 +10,13 @@ namespace CatalogoLibrosWeb.UI.Registros
         public Categoria categoria = new Categoria();
         protected void Page_Load(object sender, EventArgs e)
         {
-            FechaTextbox.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            IdTextBox.Text = "0";
+            if (!IsPostBack)
+            {
+                FechaTextbox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                IdTextBox.Text = "0";
+            }
         }
+
         private Categoria LlenaClase()
         {
             Categoria categoria = new Categoria();
@@ -24,14 +28,16 @@ namespace CatalogoLibrosWeb.UI.Registros
             categoria.FechaCreacion = fecha;
             return categoria;
         }
+
         public void LlenaCampo(Categoria categoria)
         {
             FechaTextbox.Text = categoria.FechaCreacion.ToString("yyyy-MM-dd");
-            IdTextBox.Text = categoria.ToString();
+            IdTextBox.Text = categoria.CategoriaID.ToString();
             NombreTextBox.Text = categoria.Nombre;
             DescripcionTextBox.Text = categoria.descripcion;
 
         }
+
         protected void Limpiar()
         {
             IdTextBox.Text = "0";
@@ -39,6 +45,7 @@ namespace CatalogoLibrosWeb.UI.Registros
             NombreTextBox.Text = " ";
             DescripcionTextBox.Text = " ";
         }
+
         private bool ExisteBasedeDatos()
         {
             Categoria categoria = new Categoria();
@@ -47,6 +54,7 @@ namespace CatalogoLibrosWeb.UI.Registros
             categoria = repositorio.Buscar(id);
             return categoria != null;
         }
+
         private bool validar()
         {
             bool estado = false;
