@@ -38,7 +38,7 @@
             <%--hasta aqui--%>
             <%--ISBN--%>
             <div class="form-group row control-label" style="align-items: center;">
-                <label style="font-size: medium;" for="TelefonoTextBox" class="col-md-1   input-sm">No.Telefono</label>
+                <label style="font-size: medium;" for="TelefonoTextBox" class="col-md-1   input-sm">Telefono</label>
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <asp:TextBox ID="TelefonoTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Number"></asp:TextBox>
                 </div>
@@ -58,22 +58,32 @@
                 <div class="form-horizontal col-md-12" role="form">
                     <%--TotalLibros--%>
                     <div class="form-group row control-label" style="align-items: center;">
-                        <label style="font-size: medium;" for="ContraseniaTextBox" class="col-md-1  input-sm">Contraseña</label>
+                        <label style="font-size: medium;" for="ContraseniaTextBox" class="col-md-1  input-sm">Password</label>
                         <div class="col-md-3 col-sm-6 col-xs-6">
                             <asp:TextBox ID="ContraseniaTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Password"></asp:TextBox>
                         </div>
                     </div>
                     <%--hasta aqui--%>
                      <%--TotalLibros--%>
-                    <%--Id--%>
-            <div class="form-group row control-label" style="align-items: center;">
-                <label style="font-size: medium;" for="PosicionTextBox" class="col-md-1 input-sm">Administrador</label>
-                <div class="col-md-2 col-sm-6 col-xs-3">
-                    <asp:RadioButton ID="Administrator" runat="server" />
-                </div>
-             <label style="font-size: medium;" for="PosicionTextBox2" class="col-md-1 input-sm">Usuarios</label>
-                <div class="col-md-2 col-sm-6 col-xs-3">
-             <asp:RadioButton ID="Usuario" runat="server" />
+                    <div class="form-group row control-label" style="align-items: center;">
+                        <label style="font-size: medium;" for="ConfirmacionTextBox" class="col-md-1  input-sm">Confirmar</label>
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            <asp:TextBox ID="ConfirmacionTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Password"></asp:TextBox>
+                        </div>
+                    </div>
+                    <asp:CustomValidator ID="PasswwordCustomValidator" runat="server" ErrorMessage="Contraseñas no coinciden" ControlToValidate="ConfirmacionTextBox" ForeColor="Red" SetFocusOnError="True">*</asp:CustomValidator>
+                    <%--hasta aqui--%>
+                     <%--TotalLibros--%>
+                    <%--Nivel--%>
+                    <div class="form-group row control-label" style="align-items: center;">
+                        <label for="NivelDropDownList" class="col-md-1 input-sm" style="font-size: medium">Nivel</label>
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            <asp:DropDownList ID="NivelDropDownList" Style="font-size: medium" class="form-control input-sm " runat="server" >
+                                <asp:ListItem>Administrador</asp:ListItem>
+                                <asp:ListItem>Usuario</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                    </div>
                 </div>
                     <%--hasta aqui--%>
                 </div>
@@ -89,5 +99,7 @@
                 </div>
             </div>
             <%--hasta aqui--%>
+    </div>
+    </div>
     </div>
 </asp:Content>

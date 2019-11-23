@@ -81,6 +81,16 @@ namespace CatalogoLibrosWeb.UI.Registros
             List<Usuario> lista = new List<Usuario>();
             lista = repositorio.GetList(filtrar);
 
+            string p = ContraseniaTextBox.Text;
+            string cp = ConfirmacionTextBox.Text;
+            int comparacion = 0;
+            comparacion = String.Compare(p,cp);
+            if (comparacion != 0)
+            {
+                Utils.ShowToastr(this, "Las Contraseñas no son iguales", "Error", "error");
+                PasswwordCustomValidator.Focus();
+                HayErrores = true;
+            }
             if (String.IsNullOrWhiteSpace(IdTextBox.Text))
             {
                 Utils.ShowToastr(this, "Id no puede estar vacío", "Error", "error");

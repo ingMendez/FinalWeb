@@ -76,22 +76,31 @@ namespace CatalogoLibrosWeb.UI.Registros {
         protected global::System.Web.UI.WebControls.TextBox ContraseniaTextBox;
         
         /// <summary>
-        /// Administrator control.
+        /// ConfirmacionTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Administrator;
+        protected global::System.Web.UI.WebControls.TextBox ConfirmacionTextBox;
         
         /// <summary>
-        /// Usuario control.
+        /// PasswwordCustomValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Usuario;
+        protected global::System.Web.UI.WebControls.CustomValidator PasswwordCustomValidator;
+        
+        /// <summary>
+        /// NivelDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList NivelDropDownList;
         
         /// <summary>
         /// ButtonNuevo control.
