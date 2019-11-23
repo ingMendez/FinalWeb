@@ -18,16 +18,25 @@ namespace CatalogoLibrosWeb.UI.Registros
             RepositorioBase<Prestamo> repositorio = new RepositorioBase<Prestamo>();
             if (!Page.IsPostBack)
             {
-                FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
-                FechaEntregaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                AjustarFecha();
                 IdTextBox.Text = "0";
                 LlenaCombo();
                 //ViewState["FacturaDetalle"] = new FacturaDetalle();
-                ViewState["Detalle"] = new Prestamo().Detalle;
+                ViewState["detalle"] = new Prestamo().Detalle;
                 //LlenaReport();
             }
 
         }
+
+        private void AjustarFecha()
+        {
+            FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            DateTime date = new DateTime();
+            date = DateTime.Now;
+            date = date.AddDays(7);
+            FechaEntregaTextBox.Text = date.ToString("yyyy-MM-dd");
+        }
+
 
         private void LlenaCombo()
         {
@@ -55,20 +64,20 @@ namespace CatalogoLibrosWeb.UI.Registros
             prestamo.Fecha = fecha;
             prestamo.LectorID = Utils.ToIntObjetos(LectorDropDownList.SelectedValue);
             prestamo.TotalLibros = Utils.ToInt(TotalLibrosTextBox.Text);
-
-
-            prestamo.Detalle = (List<PrestamoDetalle>)ViewState["Detalle"];
+            prestamo.Detalle = (List<PrestamoDetalle>)ViewState["detalle"];
  
             return prestamo;
         }
 
         private void LlenaCampo(Prestamo prestamo)
         {
-            List<PrestamoDetalle> detalle = prestamo.Detalle;
+            int id = Utils.ToInt(IdTextBox.Text);
+            List<PrestamoDetalle> detalle = Utils.ListaDetalle(id);
             ViewState["detalle"] = detalle;
             FechaEntregaTextBox.Text = prestamo.Fecha.ToString("yyy-MM-dd");
             LectorDropDownList.SelectedValue = prestamo.LectorID.ToString();
             DetalleGridView.DataSource = ViewState["detalle"];
+            DetalleGridView.DataBind();
             TotalLibrosTextBox.Text = prestamo.TotalLibros.ToString();
         }
 
@@ -78,7 +87,7 @@ namespace CatalogoLibrosWeb.UI.Registros
             FechaEntregaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             LectorDropDownList.SelectedIndex = 0;
             LibroDropDownList.SelectedIndex = 0;
-          //  ResultadoTextBox.Text = "0";
+            //MatriculaTextBox.Text = string.Empty;
             TotalLibrosTextBox.Text = "0";
             DetalleGridView.DataSource = null;
             DetalleGridView.DataBind();
@@ -111,12 +120,37 @@ namespace CatalogoLibrosWeb.UI.Registros
             return estato;
         }
 
+        private void LlenaValores()
+        {
+            int total = 0;
+            List<PrestamoDetalle> lista = (List<PrestamoDetalle>)ViewState["Detalle"];
+            foreach (var item in lista)
+            {
+                total += 1;
+            }
+
+            TotalLibrosTextBox.Text = total.ToString();
+        }
+
+        private void QuitaValores()
+        {
+            int total = 0;
+            List<PrestamoDetalle> lista = (List<PrestamoDetalle>)ViewState["Detalle"];
+            foreach (var item in lista)
+            {
+                total -= 1;
+            }
+
+            TotalLibrosTextBox.Text = total.ToString();
+        }
+
+
         protected void AgregarButton_Click(object sender, EventArgs e)
         {
             List<PrestamoDetalle> detalles = new List<PrestamoDetalle>();
             if (IsValid)
             {
-                DateTime date = DateTime.Now.Date;
+                DateTime date = DateTime.Now.AddDays(7);
 
                 int LibroId = Utils.ToIntObjetos(LibroDropDownList.SelectedValue);
                 string Nombre = Utils.Nombres(LibroId);
@@ -130,11 +164,12 @@ namespace CatalogoLibrosWeb.UI.Registros
                 }
 
                 PrestamoDetalle detalle = new PrestamoDetalle();
-                prestamo.Detalle.Add(new PrestamoDetalle(0,detalle.PrestamoID,Lectorid, Nombre, date));
+                prestamo.AgregarDetalle(0, prestamo.PrestamoID, LibroId, Nombre, date);
+
                 ViewState["Detalle"] = prestamo.Detalle;
                 DetalleGridView.DataSource = ViewState["Detalle"];
                 DetalleGridView.DataBind();
-                                 
+                LlenaValores();
             }
 
         }
@@ -183,7 +218,23 @@ namespace CatalogoLibrosWeb.UI.Registros
 
         protected void ButtonEliminar_Click(object sender, EventArgs e)
         {
+            RepositorioLibro repositorio = new RepositorioLibro();
+            int id = Utils.ToInt(IdTextBox.Text);
 
+            var prestamo = repositorio.Buscar(id);
+
+            if (prestamo != null)
+            {
+                if (repositorio.Eliminar(id))
+                {
+                    Utils.ShowToastr(this, "Eliminado", "Exito", "success");
+                    Limpiar();
+                }
+                else
+                    Utils.ShowToastr(this, "No se pudo eliminar", "Error", "error");
+            }
+            else
+                Utils.ShowToastr(this, "No existe", "Error", "error");
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
@@ -199,8 +250,30 @@ namespace CatalogoLibrosWeb.UI.Registros
             else
             {
                 Limpiar();
-                Utils.ShowToastr(this, "No existe la Factura especificada", "Error", "error");
+                Utils.ShowToastr(this, "No existe el prestamo especificado", "Error", "error");
             }
+        }
+
+        protected void LectorDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DetalleGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Select")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                ((List<PrestamoDetalle>)ViewState["Detalle"]).RemoveAt(index);
+                DetalleGridView.DataSource = ViewState["Detalle"];
+                DetalleGridView.DataBind();
+                QuitaValores();
+            }
+        }
+
+        protected void DetalleGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
         }
     }
 
