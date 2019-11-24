@@ -71,7 +71,7 @@
                             <asp:TextBox ID="ConfirmacionTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Password"></asp:TextBox>
                         </div>
                     </div>
-                    <asp:CustomValidator ID="PasswwordCustomValidator" runat="server" ErrorMessage="Contraseñas no coinciden" ControlToValidate="ConfirmacionTextBox" ForeColor="Red" SetFocusOnError="True">*</asp:CustomValidator>
+                    <asp:CustomValidator ID="PasswwordCustomValidator" runat="server" ErrorMessage="Contraseñas no coinciden" ControlToValidate="ConfirmacionTextBox" ForeColor="Red" SetFocusOnError="True"></asp:CustomValidator>
                     <%--hasta aqui--%>
                      <%--TotalLibros--%>
                     <%--Nivel--%>

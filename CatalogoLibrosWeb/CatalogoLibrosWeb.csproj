@@ -252,6 +252,12 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="UI\Consultas\cCategoria.aspx" />
+    <Content Include="UI\Consultas\cEditorial.aspx" />
+    <Content Include="UI\Consultas\cLector.aspx" />
+    <Content Include="UI\Consultas\cLibro.aspx" />
+    <Content Include="UI\Consultas\cPrestamo.aspx" />
+    <Content Include="UI\Consultas\cUsuario.aspx" />
     <Content Include="UI\Registros\rCategoria.aspx" />
     <Content Include="UI\Registros\rEditorial.aspx" />
     <Content Include="UI\Registros\rLector.aspx" />
@@ -301,6 +307,48 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cCategoria.aspx.cs">
+      <DependentUpon>cCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cCategoria.aspx.designer.cs">
+      <DependentUpon>cCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cEditorial.aspx.cs">
+      <DependentUpon>cEditorial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cEditorial.aspx.designer.cs">
+      <DependentUpon>cEditorial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cLector.aspx.cs">
+      <DependentUpon>cLector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cLector.aspx.designer.cs">
+      <DependentUpon>cLector.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cLibro.aspx.cs">
+      <DependentUpon>cLibro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cLibro.aspx.designer.cs">
+      <DependentUpon>cLibro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cPrestamo.aspx.cs">
+      <DependentUpon>cPrestamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cPrestamo.aspx.designer.cs">
+      <DependentUpon>cPrestamo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cUsuario.aspx.cs">
+      <DependentUpon>cUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cUsuario.aspx.designer.cs">
+      <DependentUpon>cUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rCategoria.aspx.cs">
       <DependentUpon>rCategoria.aspx</DependentUpon>
