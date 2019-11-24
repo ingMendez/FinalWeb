@@ -76,7 +76,7 @@ namespace CatalogoLibrosWeb.UI.Registros
             ViewState["detalle"] = detalle;
             FechaEntregaTextBox.Text = prestamo.Fecha.ToString("yyy-MM-dd");
             LectorDropDownList.SelectedValue = prestamo.LectorID.ToString();
-            DetalleGridView.DataSource = ViewState["detalle"];
+            DetalleGridView.DataSource = prestamo.Detalle;
             DetalleGridView.DataBind();
             TotalLibrosTextBox.Text = prestamo.TotalLibros.ToString();
         }
