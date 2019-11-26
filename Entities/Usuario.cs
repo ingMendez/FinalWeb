@@ -21,7 +21,7 @@ namespace Entities
 
         public string Contraseña { get; set; }
 
-        public bool pocision { get; set; }
+        public string pocision { get; set; }
 
         public DateTime FechaCreacion { get; set; }
 
@@ -32,7 +32,7 @@ namespace Entities
             NoTelefono = string.Empty;
             Email = string.Empty;
             Contraseña = string.Empty;
-            pocision = true;
+            pocision = string.Empty;
             FechaCreacion = DateTime.Now;
         }
     }

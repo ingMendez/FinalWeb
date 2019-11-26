@@ -31,6 +31,8 @@ namespace CatalogoLibrosWeb.UI.Registros
             MatriculaTextBox.Text = string.Empty;
             CedulaTextBox.Text= string.Empty;
             TelefonoTextBox.Text = string.Empty;
+            EmailTextBox.Text = string.Empty;
+            PasswordTextBox.Text = string.Empty;
             DireccionTextBox.Text = string.Empty;
 
         }
@@ -43,6 +45,21 @@ namespace CatalogoLibrosWeb.UI.Registros
             List<Lector> lista = new List<Lector>();
             lista = repositorio.GetList(filtrar);
 
+            string j = EmailTextBox.Text;
+            filtrar = t => t.Email.Equals(j);
+            List<Lector> lis = new List<Lector>();
+            lis = repositorio.GetList(filtrar);
+
+            string p = PasswordTextBox.Text;
+            string cp = ConfirmarPassword.Text;
+            int comparacion = 0;
+            comparacion = String.Compare(p, cp);
+            if (comparacion != 0)
+            {
+                Utils.ShowToastr(this, "Las Contraseñas no son iguales", "Error", "error");
+                PasswwordCustomValidator.Focus();
+                HayErrores = true;
+            }
             if (String.IsNullOrWhiteSpace(IdTextBox.Text))
             {
                 Utils.ShowToastr(this, "Id no puede estar vacío", "Error", "error");
@@ -60,7 +77,7 @@ namespace CatalogoLibrosWeb.UI.Registros
             }
             if (CedulaTextBox.Text.Length < 11 || CedulaTextBox.Text.Length > 13)
             {
-                Utils.ShowToastr(this, "No es una Matricula corrrecto", "Error", "error");
+                Utils.ShowToastr(this, "No es una Cedula corrrecto", "Error", "error");
                 HayErrores = true;
             }
             if (lista.Count != 0)
@@ -82,6 +99,11 @@ namespace CatalogoLibrosWeb.UI.Registros
             if (String.IsNullOrWhiteSpace(TelefonoTextBox.Text))
             {
                 Utils.ShowToastr(this, "Descripcion no puede estar vacío", "Error", "error");
+                HayErrores = true;
+            }
+            if (lis.Count != 0)
+            {
+                Utils.ShowToastr(this, "Esta Email ya existe", "Error", "error");
                 HayErrores = true;
             }
             return HayErrores;

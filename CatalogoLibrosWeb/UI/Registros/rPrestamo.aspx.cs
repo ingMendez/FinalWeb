@@ -3,8 +3,6 @@ using CatalogoLibrosWeb.Utilitarios;
 using Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -28,123 +26,143 @@ namespace CatalogoLibrosWeb.UI.Registros
 
         }
 
-                private void AjustarFecha()
-                {
-                    FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
-                    DateTime date = new DateTime();
-                    date = DateTime.Now;
-                    date = date.AddDays(7);
-                    FechaEntregaTextBox.Text = date.ToString("yyyy-MM-dd");
-                }
+        private void AjustarFecha()
+        {
+            FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            DateTime date = new DateTime();
+            date = DateTime.Now;
+            date = date.AddDays(7);
+            FechaEntregaTextBox.Text = date.ToString("yyyy-MM-dd");
+        }
 
 
-                private void LlenaCombo()
-                {
-                    RepositorioBase<Libro> repositoriu = new RepositorioBase<Libro>();
-                    RepositorioBase<Lector> repositorio = new RepositorioBase<Lector>();
+        private void LlenaCombo()
+        {
+            RepositorioBase<Libro> repositoriu = new RepositorioBase<Libro>();
+            RepositorioBase<Lector> repositorio = new RepositorioBase<Lector>();
 
-                    LibroDropDownList.DataSource = repositoriu.GetList(t => true);
-                    LibroDropDownList.DataValueField = "LibroID";
-                    LibroDropDownList.DataTextField = "NombreLibro";
-                    LibroDropDownList.DataBind();
+            LibroDropDownList.DataSource = repositoriu.GetList(t => true);
+            LibroDropDownList.DataValueField = "LibroID";
+            LibroDropDownList.DataTextField = "NombreLibro";
+            LibroDropDownList.DataBind();
 
-                    LectorDropDownList.DataSource = repositorio.GetList(t => true);
-                    LectorDropDownList.DataValueField = "LectorID";
-                    LectorDropDownList.DataTextField = "Nombre";
-                    LectorDropDownList.DataBind();
+            LectorDropDownList.DataSource = repositorio.GetList(t => true);
+            LectorDropDownList.DataValueField = "LectorID";
+            LectorDropDownList.DataTextField = "Nombre";
+            LectorDropDownList.DataBind();
 
-                }
+        }
 
-                public Prestamo LlenaClase()
-                {
-                    Prestamo prestamo = new Prestamo();
+        public Prestamo LlenaClase()
+        {
+            Prestamo prestamo = new Prestamo();
 
-                    prestamo.PrestamoID = Utils.ToInt(IdTextBox.Text);
-                    bool resultado = DateTime.TryParse(FechaEntregaTextBox.Text, out DateTime fecha);
-                    prestamo.Fecha = fecha;
-                    prestamo.LectorID = Utils.ToIntObjetos(LectorDropDownList.SelectedValue);
-                    prestamo.TotalLibros = Utils.ToInt(TotalLibrosTextBox.Text);
-                    prestamo.Detalle = (List<PrestamoDetalle>)ViewState["Detalle"];
- 
-                    return prestamo;
-                }
+            prestamo.PrestamoID = Utils.ToInt(IdTextBox.Text);
+            bool resultado = DateTime.TryParse(FechaEntregaTextBox.Text, out DateTime fecha);
+            prestamo.Fecha = fecha;
+            prestamo.LectorID = Utils.ToIntObjetos(LectorDropDownList.SelectedValue);
+            prestamo.TotalLibros = Utils.ToInt(TotalLibrosTextBox.Text);
+            prestamo.Detalle = (List<PrestamoDetalle>)ViewState["Detalle"];
 
-                private void LlenaCampo(Prestamo prestamo)
-                {
-                    int id = Utils.ToInt(IdTextBox.Text);
-                    List<PrestamoDetalle> detalle = Utils.ListaDetalle(id);
-                    ViewState["Detalle"] = detalle;
-                    FechaEntregaTextBox.Text = prestamo.Fecha.ToString("yyy-MM-dd");
-                    LectorDropDownList.SelectedValue = prestamo.LectorID.ToString();
-                    DetalleGridView.DataSource = prestamo.Detalle;
-                    DetalleGridView.DataBind();
-                    TotalLibrosTextBox.Text = prestamo.TotalLibros.ToString();
-                }
+            return prestamo;
+        }
 
-                protected void Limpiar()
-                {
-                    IdTextBox.Text = "0";
-                    FechaEntregaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
-                    LectorDropDownList.SelectedIndex = 0;
-                    LibroDropDownList.SelectedIndex = 0;
-                    //MatriculaTextBox.Text = string.Empty;
-                    TotalLibrosTextBox.Text = "0";
-                    DetalleGridView.DataSource = null;
-                    DetalleGridView.DataBind();
-                }
+        private void LlenaCampo(Prestamo prestamo)
+        {
+            int id = Utils.ToInt(IdTextBox.Text);
+            List<PrestamoDetalle> detalle = Utils.ListaDetalle(id);
+            ViewState["Detalle"] = detalle;
+            FechaEntregaTextBox.Text = prestamo.Fecha.ToString("yyy-MM-dd");
+            LectorDropDownList.SelectedValue = prestamo.LectorID.ToString();
+            DetalleGridView.DataSource = prestamo.Detalle;
+            DetalleGridView.DataBind();
+            TotalLibrosTextBox.Text = prestamo.TotalLibros.ToString();
+        }
 
-                private bool Validar()
-                {
-                    bool estato = false;
+        protected void Limpiar()
+        {
+            IdTextBox.Text = "0";
+            FechaEntregaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            LectorDropDownList.SelectedIndex = 0;
+            LibroDropDownList.SelectedIndex = 0;
+            //MatriculaTextBox.Text = string.Empty;
+            TotalLibrosTextBox.Text = "0";
+            DetalleGridView.DataSource = null;
+            DetalleGridView.DataBind();
+        }
 
-                    if (DetalleGridView.Rows.Count == 0)
-                    {
-                        Utils.ShowToastr(this, "Debe agregar.", "Error", "error");
-                        estato = true;
-                    }
-                    if (Utils.ToIntObjetos(LectorDropDownList.SelectedValue) < 1)
-                    {
-                        Utils.ShowToastr(this, "Todavía no hay un Lector guardado.", "Error", "error");
-                        estato = true;
-                    }
-                    if (Utils.ToIntObjetos(LibroDropDownList.SelectedValue) < 1)
-                    {
-                        Utils.ShowToastr(this, "Todavía no hay un Libro guardado.", "Error", "error");
-                        estato = true;
-                    }
-                    if (String.IsNullOrWhiteSpace(IdTextBox.Text))
-                    {
-                        Utils.ShowToastr(this, "Debe tener un Id para guardar", "Error", "error");
-                        estato = true;
-                    }
-                    return estato;
-                }
+        private bool Validar()
+        {
+            bool estato = false;
 
-                private void LlenaValores()
-                {
-                    int total = 0;
-                    List<PrestamoDetalle> lista = (List<PrestamoDetalle>)ViewState["Detalle"];
-                    foreach (var item in lista)
-                    {
-                        total += 1;
-                    }
+            if (DetalleGridView.Rows.Count == 0)
+            {
+                Utils.ShowToastr(this, "Debe agregar.", "Error", "error");
+                estato = true;
+            }
+            if (Utils.ToIntObjetos(LectorDropDownList.SelectedValue) < 1)
+            {
+                Utils.ShowToastr(this, "Todavía no hay un Lector guardado.", "Error", "error");
+                estato = true;
+            }
+            if (Utils.ToIntObjetos(LibroDropDownList.SelectedValue) < 1)
+            {
+                Utils.ShowToastr(this, "Todavía no hay un Libro guardado.", "Error", "error");
+                estato = true;
+            }
+            if (String.IsNullOrWhiteSpace(IdTextBox.Text))
+            {
+                Utils.ShowToastr(this, "Debe tener un Id para guardar", "Error", "error");
+                estato = true;
+            }
+            return estato;
+        }
+        private bool Valigrar()
+        {
+            bool estato = false;
 
-                    TotalLibrosTextBox.Text = total.ToString();
-                }
+            if (Utils.ToIntObjetos(LectorDropDownList.SelectedValue) < 1)
+            {
+                Utils.ShowToastr(this, "Todavía no hay un Lector guardado.", "Error", "error");
+                estato = true;
+            }
+            if (Utils.ToIntObjetos(LibroDropDownList.SelectedValue) < 1)
+            {
+                Utils.ShowToastr(this, "Todavía no hay un Libro guardado.", "Error", "error");
+                estato = true;
+            }
+            if (String.IsNullOrWhiteSpace(IdTextBox.Text))
+            {
+                Utils.ShowToastr(this, "Debe tener un Id para guardar", "Error", "error");
+                estato = true;
+            }
+            return estato;
+        }
+        private void LlenaValores()
+        {
+            int total = 0;
+            List<PrestamoDetalle> lista = (List<PrestamoDetalle>)ViewState["Detalle"];
+            foreach (var item in lista)
+            {
+                total += 1;
+            }
 
-                private void QuitaValores()
-                {
-                    int total = 0;
-                    List<PrestamoDetalle> lista = (List<PrestamoDetalle>)ViewState["Detalle"];
-                    foreach (var item in lista)
-                    {
-                        total -= 1;
-                    }
+            TotalLibrosTextBox.Text = total.ToString();
+        }
 
-                    TotalLibrosTextBox.Text = total.ToString();
-                }
+        private void QuitaValores()
+        {
+            int total = 0;
+            List<PrestamoDetalle> lista = (List<PrestamoDetalle>)ViewState["Detalle"];
+            foreach (var item in lista)
+            {
+                total -= 1;
+            }
+
+            TotalLibrosTextBox.Text = total.ToString();
+        }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-       
+
         /// <summary>
         /// Aqui se programa el Agregar del data Griview
         /// </summary>
@@ -153,7 +171,7 @@ namespace CatalogoLibrosWeb.UI.Registros
         protected void AgregarButton_Click(object sender, EventArgs e)
         {
             List<PrestamoDetalle> detalles = new List<PrestamoDetalle>();
-            if (IsValid)
+            if (!Valigrar())
             {
                 DateTime date = DateTime.Now.AddDays(7);
 
@@ -161,15 +179,14 @@ namespace CatalogoLibrosWeb.UI.Registros
                 string Nombre = Utils.Nombres(LibroId);
 
                 int Lectorid = Utils.ToIntObjetos(LectorDropDownList.SelectedValue);
-                string lectors = Utils.Nombres(Lectorid);
+                string lectors = Utils.Nombreslector(Lectorid);
 
                 if (DetalleGridView.Rows.Count != 0)
                 {
                     prestamos.Detalle = (List<PrestamoDetalle>)ViewState["Detalle"];
                 }
-
-                PrestamoDetalle detalle = new PrestamoDetalle();
-                prestamos.AgregarDetalle(0, detalle.PrestamoID, LibroId, Nombre, date);
+                
+                prestamos.AgregarDetalle(0, Utils.ToIntObjetos(IdTextBox.Text), LibroId, Nombre, date);
 
                 ViewState["Detalle"] = prestamos.Detalle;
                 DetalleGridView.DataSource = ViewState["Detalle"];
@@ -208,6 +225,7 @@ namespace CatalogoLibrosWeb.UI.Registros
             }
             else
             {
+
                 prestamo = LlenaClase();
                 if (Convert.ToInt32(IdTextBox.Text) == 0)
                 {
@@ -223,11 +241,16 @@ namespace CatalogoLibrosWeb.UI.Registros
                     pres = repo.Buscar(id);
 
 
-                    if(pres != null)
+                    if (pres != null)
                     {
                         paso = repo.Modificar(LlenaClase());
+                        Utils.ShowToastr(this, "Modificado", "Exito", "success");
+                        Limpiar();
                     }
                 }
+
+
+
             }
 
         }

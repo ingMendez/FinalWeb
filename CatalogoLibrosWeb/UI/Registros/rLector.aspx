@@ -67,11 +67,34 @@
                         </div>
                     </div>
                     <%--hasta aqui--%>
+                      <%--Email--%>
+                    <div class="form-group row control-label" style="align-items: center;">
+                        <label style="font-size: medium;" for="Email" class="col-md-1   input-sm">Email</label>
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            <asp:TextBox ID="EmailTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Email" type="required"></asp:TextBox>
+                        </div>
+                    </div>
+                       <%--Contraña--%>
+                    <div class="form-group row control-label" style="align-items: center;">
+                        <label style="font-size: medium;" for="Password" class="col-md-1   input-sm">Password</label>
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            <asp:TextBox ID="PasswordTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Password"></asp:TextBox>
+                        </div>
+                          <asp:CustomValidator ID="PasswwordCustomValidator" runat="server" ErrorMessage="Contraseñas no coinciden" ControlToValidate="ConfirmarPassword" ForeColor="Red" SetFocusOnError="True"></asp:CustomValidator>
+                
+                    </div>
+                       <%--confirmarContraseña--%>
+                    <div class="form-group row control-label" style="align-items: center;">
+                        <label style="font-size: medium;" for="Email" class="col-md-1   input-sm">Confirmar Contraña</label>
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            <asp:TextBox ID="ConfirmarPassword" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Password"></asp:TextBox>
+                        </div>
+                    </div>
                      <%--TotalLibros--%>
                     <div class="form-group row control-label" style="align-items: center;">
                         <label style="font-size: medium;" for="DireccionTextBox" class="col-md-1   input-sm">Direccion</label>
                         <div class="col-md-3 col-sm-6 col-xs-6">
-                            <asp:TextBox ID="DireccionTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>
+                            <asp:TextBox ID="DireccionTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="SingleLine" ></asp:TextBox>
                         </div>
                     </div>
                     <%--hasta aqui--%>
@@ -89,5 +112,8 @@
                 </div>
             </div>
             <%--hasta aqui--%>
+    </div>
+</div>
+    </div>
     </div>
 </asp:Content>

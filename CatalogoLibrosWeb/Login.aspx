@@ -26,10 +26,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <form class="form-group my-2 my-sm-0">
-                        <input class="form-control col-md-2" type="search" placeholder="E-mail" >
-                        <input class="form-control col-md-2" type="search" placeholder="Password" >
-                        <button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
+                        <asp:TextBox ID="EmailTextBox" class="form-control col-md-2" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="PasswordTextBox" class="form-control col-md-2" runat="server"></asp:TextBox>
+                        <asp:Button ID="Button1" runat="server" class="btn btn-success my-2 my-sm-0" Text="Entrar" OnClick="Button1_Click" />
+                        <%--<button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>--%>
                     </form>
+                    <span><i class="fab fa-facebook-square"></i></span>
                 </div>
             </nav>
         </div>

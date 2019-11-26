@@ -17,6 +17,8 @@ namespace Entities
         public int Matricula { get; set; }
         public string Cedula { get; set; }
         public string Telefono { get; set; }
+        public string Email { get; set; }
+        public string Pasword { get; set; }
         public DateTime Fecha { get; set; }
         public string Direccion { get; set; }
 
@@ -28,6 +30,8 @@ namespace Entities
             Cedula = string.Empty;
             Direccion = string.Empty;
             Telefono = string.Empty;
+            Email = string.Empty;
+            Pasword = string.Empty;
             Fecha = DateTime.Now;
         }
 

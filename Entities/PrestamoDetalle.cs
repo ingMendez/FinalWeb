@@ -13,12 +13,11 @@ namespace Entities
         public int LibroID { get; set; }
         public string Descripcion { get; set; }
         public DateTime FechaEntrega { get; set; }
-
-       /* [ForeignKey("PretamoID")]
+        [ForeignKey("PrestamoID")]
         public virtual Prestamo _pretamo { get; set; }
 
         [ForeignKey("LibroID")]
-        public virtual Libro Libro { get; set; }*/
+        public virtual Libro Libro { get; set; }
 
         public PrestamoDetalle()
         {

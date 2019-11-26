@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace Entities
         public int PrestamoID { get; set; }
         public DateTime Fecha { get; set; }
         public int LectorID { get; set; }
+        [ForeignKey("LectorID")]
+        public virtual Lector Lector{ get; set; }
         public int TotalLibros { get; set; }
         public virtual List<PrestamoDetalle> Detalle { get; set; }
 

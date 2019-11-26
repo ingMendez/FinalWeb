@@ -83,6 +83,17 @@ namespace CatalogoLibrosWeb.Utilitarios
             return desc;
         }
 
+        public static string Nombreslector(int IdLista)
+        {
+            RepositorioBase<Lector> repositorio = new RepositorioBase<Lector>();
+            Lector lib = new Lector();
+            int id = IdLista;
+            lib = repositorio.Buscar(id);
+
+            string desc = lib.Nombre;
+
+            return desc;
+        }
         //Lista para el Detalle.
         public static List<PrestamoDetalle> ListaDetalle(int IdLista)
         {

@@ -36,7 +36,7 @@
             <div class="container-login100">
                 <div class="wrap-login100">
                     <form class="login100-form validate-form">
-                        <span class="login100-form-title p-b-43">Login to continue
+                        <span class="login100-form-title p-b-43">Inicie Sesion
                         </span>
 
 
@@ -90,7 +90,7 @@
                         </div>
                     </form>
 
-                    <div class="login100-more" style="background-image: url('/Contenidos/images/bg-01.jpg');">
+                    <%--<div class="login100-more" style="background-image: url('/Contenidos/images/bg-01.jpg');">--%>
                     </div>
                 </div>
             </div>

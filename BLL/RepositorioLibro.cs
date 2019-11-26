@@ -1,11 +1,8 @@
 ﻿using DAL;
 using Entities;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
@@ -16,6 +13,25 @@ namespace BLL
 
         }
 
+        public override Prestamo Buscar(int id)
+        {
+            Prestamo prestamo = new Prestamo();
+            Contexto db = new Contexto();
+            try
+            {
+
+                prestamo = db.Prestamo.AsNoTracking().Include(x => x.Detalle).Where(x => x.PrestamoID == id).FirstOrDefault();
+               
+            }
+            catch (Exception)
+            { throw; }
+            finally
+            {
+                db.Dispose();
+                
+            }
+            return prestamo;
+        }
         public override bool Modificar(Prestamo entity)
         {
             bool paso = false;
@@ -29,13 +45,18 @@ namespace BLL
                     {
                         if (!entity.Detalle.Exists(x => x.IDDetalle == item.IDDetalle))
                         {
-
-                            contexto.Entry(item).State = EntityState.Deleted;
                             entity.Detalle.Remove(item);
-                            // repositorioBase.Dispose();
+                            contexto.Entry(item).State = EntityState.Deleted;
                         }
                     }
                     contexto.SaveChanges();
+                }
+                foreach (var item in entity.Detalle.ToList())
+                {
+                    if (item.IDDetalle == 0)
+                    {
+                        db.Entry(item).State = EntityState.Added;
+                    }
                 }
                 db.Entry(entity).State = EntityState.Modified;
                 paso = (db.SaveChanges() > 0);
@@ -44,9 +65,9 @@ namespace BLL
             { throw; }
             finally
             { db.Dispose(); }
-
+           
             return paso;
         }
     }
 }
-    
+

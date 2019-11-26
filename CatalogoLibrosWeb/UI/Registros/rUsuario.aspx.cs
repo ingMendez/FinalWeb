@@ -33,7 +33,7 @@ namespace CatalogoLibrosWeb.UI.Registros
             ContraseniaTextBox.Text = string.Empty;
             TelefonoTextBox.Text = string.Empty;
             EmailTextBox.Text = string.Empty;
-
+            NivelDropDownList.Text = string.Empty;
         }
 
         public void LlenaCampos(Usuario usuario)
@@ -44,6 +44,7 @@ namespace CatalogoLibrosWeb.UI.Registros
             EmailTextBox.Text = usuario.Email;
             TelefonoTextBox.Text = usuario.NoTelefono;
             ContraseniaTextBox.Text = usuario.Contraseña;
+            NivelDropDownList.Text = usuario.pocision;
            // DireccionTextBox.Text = usuario.Direccion;
         }
 
@@ -58,6 +59,7 @@ namespace CatalogoLibrosWeb.UI.Registros
             usuario.Contraseña = ContraseniaTextBox.Text;
             bool resultado = DateTime.TryParse(FechaTextBox.Text, out DateTime fecha);
             usuario.FechaCreacion = fecha;
+            usuario.pocision = NivelDropDownList.Text;
           //  usuario.Direccion = DireccionTextBox.Text;
 
             return usuario;
