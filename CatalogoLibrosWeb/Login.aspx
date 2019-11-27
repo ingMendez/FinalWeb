@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <form class="form-group my-2 my-sm-0">
                         <asp:TextBox ID="EmailTextBox" class="form-control col-md-2" runat="server"></asp:TextBox>
-                        <asp:TextBox ID="PasswordTextBox" class="form-control col-md-2" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="PasswordTextBox" class="form-control col-md-2" runat="server" TextMode="Password"></asp:TextBox>
                         <asp:Button ID="Button1" runat="server" class="btn btn-success my-2 my-sm-0" Text="Entrar" OnClick="Button1_Click" />
                         <%--<button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>--%>
                     </form>
