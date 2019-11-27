@@ -20,17 +20,17 @@ namespace CatalogoLibrosWeb {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("FinalitysDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("EditorialDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class FinalitysDataSet : global::System.Data.DataSet {
+    public partial class EditorialDataSet : global::System.Data.DataSet {
         
-        private LectorsDataTable tableLectors;
+        private EditorialsDataTable tableEditorials;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public FinalitysDataSet() {
+        public EditorialDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CatalogoLibrosWeb {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected FinalitysDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected EditorialDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace CatalogoLibrosWeb {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Lectors"] != null)) {
-                    base.Tables.Add(new LectorsDataTable(ds.Tables["Lectors"]));
+                if ((ds.Tables["Editorials"] != null)) {
+                    base.Tables.Add(new EditorialsDataTable(ds.Tables["Editorials"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace CatalogoLibrosWeb {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public LectorsDataTable Lectors {
+        public EditorialsDataTable Editorials {
             get {
-                return this.tableLectors;
+                return this.tableEditorials;
             }
         }
         
@@ -127,7 +127,7 @@ namespace CatalogoLibrosWeb {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            FinalitysDataSet cln = ((FinalitysDataSet)(base.Clone()));
+            EditorialDataSet cln = ((EditorialDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace CatalogoLibrosWeb {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Lectors"] != null)) {
-                    base.Tables.Add(new LectorsDataTable(ds.Tables["Lectors"]));
+                if ((ds.Tables["Editorials"] != null)) {
+                    base.Tables.Add(new EditorialsDataTable(ds.Tables["Editorials"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace CatalogoLibrosWeb {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableLectors = ((LectorsDataTable)(base.Tables["Lectors"]));
+            this.tableEditorials = ((EditorialsDataTable)(base.Tables["Editorials"]));
             if ((initTable == true)) {
-                if ((this.tableLectors != null)) {
-                    this.tableLectors.InitVars();
+                if ((this.tableEditorials != null)) {
+                    this.tableEditorials.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace CatalogoLibrosWeb {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "FinalitysDataSet";
+            this.DataSetName = "EditorialDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/FinalitysDataSet.xsd";
+            this.Namespace = "http://tempuri.org/EditorialDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableLectors = new LectorsDataTable();
-            base.Tables.Add(this.tableLectors);
+            this.tableEditorials = new EditorialsDataTable();
+            base.Tables.Add(this.tableEditorials);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeLectors() {
+        private bool ShouldSerializeEditorials() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace CatalogoLibrosWeb {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            FinalitysDataSet ds = new FinalitysDataSet();
+            EditorialDataSet ds = new EditorialDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,37 +270,27 @@ namespace CatalogoLibrosWeb {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void LectorsRowChangeEventHandler(object sender, LectorsRowChangeEvent e);
+        public delegate void EditorialsRowChangeEventHandler(object sender, EditorialsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class LectorsDataTable : global::System.Data.TypedTableBase<LectorsRow> {
+        public partial class EditorialsDataTable : global::System.Data.TypedTableBase<EditorialsRow> {
             
-            private global::System.Data.DataColumn columnLectorID;
+            private global::System.Data.DataColumn columnEditorialID;
             
             private global::System.Data.DataColumn columnNombre;
             
-            private global::System.Data.DataColumn columnMatricula;
-            
-            private global::System.Data.DataColumn columnCedula;
-            
-            private global::System.Data.DataColumn columnTelefono;
-            
-            private global::System.Data.DataColumn columnEmail;
-            
-            private global::System.Data.DataColumn columnPasword;
+            private global::System.Data.DataColumn columnDirrecion;
             
             private global::System.Data.DataColumn columnFecha;
             
-            private global::System.Data.DataColumn columnDireccion;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LectorsDataTable() {
-                this.TableName = "Lectors";
+            public EditorialsDataTable() {
+                this.TableName = "Editorials";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -308,7 +298,7 @@ namespace CatalogoLibrosWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal LectorsDataTable(global::System.Data.DataTable table) {
+            internal EditorialsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -325,16 +315,16 @@ namespace CatalogoLibrosWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected LectorsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected EditorialsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn LectorIDColumn {
+            public global::System.Data.DataColumn EditorialIDColumn {
                 get {
-                    return this.columnLectorID;
+                    return this.columnEditorialID;
                 }
             }
             
@@ -348,41 +338,9 @@ namespace CatalogoLibrosWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn MatriculaColumn {
+            public global::System.Data.DataColumn DirrecionColumn {
                 get {
-                    return this.columnMatricula;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn CedulaColumn {
-                get {
-                    return this.columnCedula;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn TelefonoColumn {
-                get {
-                    return this.columnTelefono;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn EmailColumn {
-                get {
-                    return this.columnEmail;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PaswordColumn {
-                get {
-                    return this.columnPasword;
+                    return this.columnDirrecion;
                 }
             }
             
@@ -391,14 +349,6 @@ namespace CatalogoLibrosWeb {
             public global::System.Data.DataColumn FechaColumn {
                 get {
                     return this.columnFecha;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DireccionColumn {
-                get {
-                    return this.columnDireccion;
                 }
             }
             
@@ -413,60 +363,55 @@ namespace CatalogoLibrosWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LectorsRow this[int index] {
+            public EditorialsRow this[int index] {
                 get {
-                    return ((LectorsRow)(this.Rows[index]));
+                    return ((EditorialsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event LectorsRowChangeEventHandler LectorsRowChanging;
+            public event EditorialsRowChangeEventHandler EditorialsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event LectorsRowChangeEventHandler LectorsRowChanged;
+            public event EditorialsRowChangeEventHandler EditorialsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event LectorsRowChangeEventHandler LectorsRowDeleting;
+            public event EditorialsRowChangeEventHandler EditorialsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event LectorsRowChangeEventHandler LectorsRowDeleted;
+            public event EditorialsRowChangeEventHandler EditorialsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddLectorsRow(LectorsRow row) {
+            public void AddEditorialsRow(EditorialsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LectorsRow AddLectorsRow(string Nombre, int Matricula, string Cedula, string Telefono, string Email, string Pasword, System.DateTime Fecha, string Direccion) {
-                LectorsRow rowLectorsRow = ((LectorsRow)(this.NewRow()));
+            public EditorialsRow AddEditorialsRow(string Nombre, string Dirrecion, System.DateTime Fecha) {
+                EditorialsRow rowEditorialsRow = ((EditorialsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nombre,
-                        Matricula,
-                        Cedula,
-                        Telefono,
-                        Email,
-                        Pasword,
-                        Fecha,
-                        Direccion};
-                rowLectorsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowLectorsRow);
-                return rowLectorsRow;
+                        Dirrecion,
+                        Fecha};
+                rowEditorialsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEditorialsRow);
+                return rowEditorialsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LectorsRow FindByLectorID(int LectorID) {
-                return ((LectorsRow)(this.Rows.Find(new object[] {
-                            LectorID})));
+            public EditorialsRow FindByEditorialID(int EditorialID) {
+                return ((EditorialsRow)(this.Rows.Find(new object[] {
+                            EditorialID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                LectorsDataTable cln = ((LectorsDataTable)(base.Clone()));
+                EditorialsDataTable cln = ((EditorialsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -474,86 +419,66 @@ namespace CatalogoLibrosWeb {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new LectorsDataTable();
+                return new EditorialsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnLectorID = base.Columns["LectorID"];
+                this.columnEditorialID = base.Columns["EditorialID"];
                 this.columnNombre = base.Columns["Nombre"];
-                this.columnMatricula = base.Columns["Matricula"];
-                this.columnCedula = base.Columns["Cedula"];
-                this.columnTelefono = base.Columns["Telefono"];
-                this.columnEmail = base.Columns["Email"];
-                this.columnPasword = base.Columns["Pasword"];
+                this.columnDirrecion = base.Columns["Dirrecion"];
                 this.columnFecha = base.Columns["Fecha"];
-                this.columnDireccion = base.Columns["Direccion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnLectorID = new global::System.Data.DataColumn("LectorID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLectorID);
+                this.columnEditorialID = new global::System.Data.DataColumn("EditorialID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEditorialID);
                 this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombre);
-                this.columnMatricula = new global::System.Data.DataColumn("Matricula", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMatricula);
-                this.columnCedula = new global::System.Data.DataColumn("Cedula", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCedula);
-                this.columnTelefono = new global::System.Data.DataColumn("Telefono", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTelefono);
-                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEmail);
-                this.columnPasword = new global::System.Data.DataColumn("Pasword", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPasword);
+                this.columnDirrecion = new global::System.Data.DataColumn("Dirrecion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDirrecion);
                 this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFecha);
-                this.columnDireccion = new global::System.Data.DataColumn("Direccion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDireccion);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnLectorID}, true));
-                this.columnLectorID.AutoIncrement = true;
-                this.columnLectorID.AutoIncrementSeed = -1;
-                this.columnLectorID.AutoIncrementStep = -1;
-                this.columnLectorID.AllowDBNull = false;
-                this.columnLectorID.ReadOnly = true;
-                this.columnLectorID.Unique = true;
+                                this.columnEditorialID}, true));
+                this.columnEditorialID.AutoIncrement = true;
+                this.columnEditorialID.AutoIncrementSeed = -1;
+                this.columnEditorialID.AutoIncrementStep = -1;
+                this.columnEditorialID.AllowDBNull = false;
+                this.columnEditorialID.ReadOnly = true;
+                this.columnEditorialID.Unique = true;
                 this.columnNombre.MaxLength = 2147483647;
-                this.columnMatricula.AllowDBNull = false;
-                this.columnCedula.MaxLength = 2147483647;
-                this.columnTelefono.MaxLength = 2147483647;
-                this.columnEmail.MaxLength = 2147483647;
-                this.columnPasword.MaxLength = 2147483647;
+                this.columnDirrecion.MaxLength = 2147483647;
                 this.columnFecha.AllowDBNull = false;
-                this.columnDireccion.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LectorsRow NewLectorsRow() {
-                return ((LectorsRow)(this.NewRow()));
+            public EditorialsRow NewEditorialsRow() {
+                return ((EditorialsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new LectorsRow(builder);
+                return new EditorialsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(LectorsRow);
+                return typeof(EditorialsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.LectorsRowChanged != null)) {
-                    this.LectorsRowChanged(this, new LectorsRowChangeEvent(((LectorsRow)(e.Row)), e.Action));
+                if ((this.EditorialsRowChanged != null)) {
+                    this.EditorialsRowChanged(this, new EditorialsRowChangeEvent(((EditorialsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -561,8 +486,8 @@ namespace CatalogoLibrosWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.LectorsRowChanging != null)) {
-                    this.LectorsRowChanging(this, new LectorsRowChangeEvent(((LectorsRow)(e.Row)), e.Action));
+                if ((this.EditorialsRowChanging != null)) {
+                    this.EditorialsRowChanging(this, new EditorialsRowChangeEvent(((EditorialsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -570,8 +495,8 @@ namespace CatalogoLibrosWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.LectorsRowDeleted != null)) {
-                    this.LectorsRowDeleted(this, new LectorsRowChangeEvent(((LectorsRow)(e.Row)), e.Action));
+                if ((this.EditorialsRowDeleted != null)) {
+                    this.EditorialsRowDeleted(this, new EditorialsRowChangeEvent(((EditorialsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -579,14 +504,14 @@ namespace CatalogoLibrosWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.LectorsRowDeleting != null)) {
-                    this.LectorsRowDeleting(this, new LectorsRowChangeEvent(((LectorsRow)(e.Row)), e.Action));
+                if ((this.EditorialsRowDeleting != null)) {
+                    this.EditorialsRowDeleting(this, new EditorialsRowChangeEvent(((EditorialsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveLectorsRow(LectorsRow row) {
+            public void RemoveEditorialsRow(EditorialsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -595,7 +520,7 @@ namespace CatalogoLibrosWeb {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FinalitysDataSet ds = new FinalitysDataSet();
+                EditorialDataSet ds = new EditorialDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -613,7 +538,7 @@ namespace CatalogoLibrosWeb {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "LectorsDataTable";
+                attribute2.FixedValue = "EditorialsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -657,25 +582,25 @@ namespace CatalogoLibrosWeb {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class LectorsRow : global::System.Data.DataRow {
+        public partial class EditorialsRow : global::System.Data.DataRow {
             
-            private LectorsDataTable tableLectors;
+            private EditorialsDataTable tableEditorials;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal LectorsRow(global::System.Data.DataRowBuilder rb) : 
+            internal EditorialsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableLectors = ((LectorsDataTable)(this.Table));
+                this.tableEditorials = ((EditorialsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int LectorID {
+            public int EditorialID {
                 get {
-                    return ((int)(this[this.tableLectors.LectorIDColumn]));
+                    return ((int)(this[this.tableEditorials.EditorialIDColumn]));
                 }
                 set {
-                    this[this.tableLectors.LectorIDColumn] = value;
+                    this[this.tableEditorials.EditorialIDColumn] = value;
                 }
             }
             
@@ -684,89 +609,30 @@ namespace CatalogoLibrosWeb {
             public string Nombre {
                 get {
                     try {
-                        return ((string)(this[this.tableLectors.NombreColumn]));
+                        return ((string)(this[this.tableEditorials.NombreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Nombre\' in table \'Lectors\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Nombre\' in table \'Editorials\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLectors.NombreColumn] = value;
+                    this[this.tableEditorials.NombreColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Matricula {
-                get {
-                    return ((int)(this[this.tableLectors.MatriculaColumn]));
-                }
-                set {
-                    this[this.tableLectors.MatriculaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Cedula {
+            public string Dirrecion {
                 get {
                     try {
-                        return ((string)(this[this.tableLectors.CedulaColumn]));
+                        return ((string)(this[this.tableEditorials.DirrecionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Cedula\' in table \'Lectors\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dirrecion\' in table \'Editorials\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLectors.CedulaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Telefono {
-                get {
-                    try {
-                        return ((string)(this[this.tableLectors.TelefonoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Telefono\' in table \'Lectors\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableLectors.TelefonoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Email {
-                get {
-                    try {
-                        return ((string)(this[this.tableLectors.EmailColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Email\' in table \'Lectors\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableLectors.EmailColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Pasword {
-                get {
-                    try {
-                        return ((string)(this[this.tableLectors.PaswordColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Pasword\' in table \'Lectors\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableLectors.PaswordColumn] = value;
+                    this[this.tableEditorials.DirrecionColumn] = value;
                 }
             }
             
@@ -774,99 +640,35 @@ namespace CatalogoLibrosWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime Fecha {
                 get {
-                    return ((global::System.DateTime)(this[this.tableLectors.FechaColumn]));
+                    return ((global::System.DateTime)(this[this.tableEditorials.FechaColumn]));
                 }
                 set {
-                    this[this.tableLectors.FechaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Direccion {
-                get {
-                    try {
-                        return ((string)(this[this.tableLectors.DireccionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Direccion\' in table \'Lectors\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableLectors.DireccionColumn] = value;
+                    this[this.tableEditorials.FechaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNombreNull() {
-                return this.IsNull(this.tableLectors.NombreColumn);
+                return this.IsNull(this.tableEditorials.NombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetNombreNull() {
-                this[this.tableLectors.NombreColumn] = global::System.Convert.DBNull;
+                this[this.tableEditorials.NombreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsCedulaNull() {
-                return this.IsNull(this.tableLectors.CedulaColumn);
+            public bool IsDirrecionNull() {
+                return this.IsNull(this.tableEditorials.DirrecionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetCedulaNull() {
-                this[this.tableLectors.CedulaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsTelefonoNull() {
-                return this.IsNull(this.tableLectors.TelefonoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetTelefonoNull() {
-                this[this.tableLectors.TelefonoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsEmailNull() {
-                return this.IsNull(this.tableLectors.EmailColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetEmailNull() {
-                this[this.tableLectors.EmailColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsPaswordNull() {
-                return this.IsNull(this.tableLectors.PaswordColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetPaswordNull() {
-                this[this.tableLectors.PaswordColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDireccionNull() {
-                return this.IsNull(this.tableLectors.DireccionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDireccionNull() {
-                this[this.tableLectors.DireccionColumn] = global::System.Convert.DBNull;
+            public void SetDirrecionNull() {
+                this[this.tableEditorials.DirrecionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -874,22 +676,22 @@ namespace CatalogoLibrosWeb {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class LectorsRowChangeEvent : global::System.EventArgs {
+        public class EditorialsRowChangeEvent : global::System.EventArgs {
             
-            private LectorsRow eventRow;
+            private EditorialsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LectorsRowChangeEvent(LectorsRow row, global::System.Data.DataRowAction action) {
+            public EditorialsRowChangeEvent(EditorialsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LectorsRow Row {
+            public EditorialsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -905,7 +707,7 @@ namespace CatalogoLibrosWeb {
         }
     }
 }
-namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
+namespace CatalogoLibrosWeb.EditorialDataSetTableAdapters {
     
     
     /// <summary>
@@ -917,7 +719,7 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class LectorsTableAdapter : global::System.ComponentModel.Component {
+    public partial class EditorialsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -931,7 +733,7 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public LectorsTableAdapter() {
+        public EditorialsTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1028,52 +830,34 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Lectors";
-            tableMapping.ColumnMappings.Add("LectorID", "LectorID");
+            tableMapping.DataSetTable = "Editorials";
+            tableMapping.ColumnMappings.Add("EditorialID", "EditorialID");
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
-            tableMapping.ColumnMappings.Add("Matricula", "Matricula");
-            tableMapping.ColumnMappings.Add("Cedula", "Cedula");
-            tableMapping.ColumnMappings.Add("Telefono", "Telefono");
-            tableMapping.ColumnMappings.Add("Email", "Email");
-            tableMapping.ColumnMappings.Add("Pasword", "Pasword");
+            tableMapping.ColumnMappings.Add("Dirrecion", "Dirrecion");
             tableMapping.ColumnMappings.Add("Fecha", "Fecha");
-            tableMapping.ColumnMappings.Add("Direccion", "Direccion");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Lectors] WHERE (([LectorID] = @Original_LectorID))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Editorials] WHERE (([EditorialID] = @Original_EditorialID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LectorID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LectorID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EditorialID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EditorialID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Lectors] ([Nombre], [Matricula], [Cedula], [Telefono], [Email]" +
-                ", [Pasword], [Fecha], [Direccion]) VALUES (@Nombre, @Matricula, @Cedula, @Telefo" +
-                "no, @Email, @Pasword, @Fecha, @Direccion)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Editorials] ([Nombre], [Dirrecion], [Fecha]) VALUES (@Nombre, " +
+                "@Dirrecion, @Fecha)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Matricula", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Matricula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cedula", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cedula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telefono", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pasword", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pasword", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Dirrecion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dirrecion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Direccion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Direccion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Lectors] SET [Nombre] = @Nombre, [Matricula] = @Matricula, [Cedula]" +
-                " = @Cedula, [Telefono] = @Telefono, [Email] = @Email, [Pasword] = @Pasword, [Fec" +
-                "ha] = @Fecha, [Direccion] = @Direccion WHERE (([LectorID] = @Original_LectorID))" +
-                "";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Editorials] SET [Nombre] = @Nombre, [Dirrecion] = @Dirrecion, [Fech" +
+                "a] = @Fecha WHERE (([EditorialID] = @Original_EditorialID))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Matricula", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Matricula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cedula", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cedula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telefono", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pasword", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pasword", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Dirrecion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dirrecion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Direccion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Direccion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LectorID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LectorID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EditorialID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EditorialID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1089,8 +873,7 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT LectorID, Nombre, Matricula, Cedula, Telefono, Email, Pasword, Fecha, Dire" +
-                "ccion FROM dbo.Lectors";
+            this._commandCollection[0].CommandText = "SELECT EditorialID, Nombre, Dirrecion, Fecha FROM dbo.Editorials";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1098,7 +881,7 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FinalitysDataSet.LectorsDataTable dataTable) {
+        public virtual int Fill(EditorialDataSet.EditorialsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1111,9 +894,9 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FinalitysDataSet.LectorsDataTable GetData() {
+        public virtual EditorialDataSet.EditorialsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FinalitysDataSet.LectorsDataTable dataTable = new FinalitysDataSet.LectorsDataTable();
+            EditorialDataSet.EditorialsDataTable dataTable = new EditorialDataSet.EditorialsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1121,15 +904,15 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FinalitysDataSet.LectorsDataTable dataTable) {
+        public virtual int Update(EditorialDataSet.EditorialsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FinalitysDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Lectors");
+        public virtual int Update(EditorialDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Editorials");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1151,8 +934,8 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_LectorID) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_LectorID));
+        public virtual int Delete(int Original_EditorialID) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_EditorialID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1173,45 +956,20 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nombre, int Matricula, string Cedula, string Telefono, string Email, string Pasword, System.DateTime Fecha, string Direccion) {
+        public virtual int Insert(string Nombre, string Dirrecion, System.DateTime Fecha) {
             if ((Nombre == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nombre));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Matricula));
-            if ((Cedula == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((Dirrecion == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Cedula));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Dirrecion));
             }
-            if ((Telefono == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Telefono));
-            }
-            if ((Email == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Email));
-            }
-            if ((Pasword == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Pasword));
-            }
-            this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(Fecha));
-            if ((Direccion == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Direccion));
-            }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Fecha));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1232,46 +990,21 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nombre, int Matricula, string Cedula, string Telefono, string Email, string Pasword, System.DateTime Fecha, string Direccion, int Original_LectorID) {
+        public virtual int Update(string Nombre, string Dirrecion, System.DateTime Fecha, int Original_EditorialID) {
             if ((Nombre == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nombre));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Matricula));
-            if ((Cedula == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((Dirrecion == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Cedula));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Dirrecion));
             }
-            if ((Telefono == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Telefono));
-            }
-            if ((Email == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Email));
-            }
-            if ((Pasword == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Pasword));
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Fecha));
-            if ((Direccion == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Direccion));
-            }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_LectorID));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Fecha));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_EditorialID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1301,7 +1034,7 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private LectorsTableAdapter _lectorsTableAdapter;
+        private EditorialsTableAdapter _editorialsTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1323,12 +1056,12 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public LectorsTableAdapter LectorsTableAdapter {
+        public EditorialsTableAdapter EditorialsTableAdapter {
             get {
-                return this._lectorsTableAdapter;
+                return this._editorialsTableAdapter;
             }
             set {
-                this._lectorsTableAdapter = value;
+                this._editorialsTableAdapter = value;
             }
         }
         
@@ -1351,9 +1084,9 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._lectorsTableAdapter != null) 
-                            && (this._lectorsTableAdapter.Connection != null))) {
-                    return this._lectorsTableAdapter.Connection;
+                if (((this._editorialsTableAdapter != null) 
+                            && (this._editorialsTableAdapter.Connection != null))) {
+                    return this._editorialsTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1368,7 +1101,7 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._lectorsTableAdapter != null)) {
+                if ((this._editorialsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1380,14 +1113,14 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(FinalitysDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(EditorialDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._lectorsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Lectors.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._editorialsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Editorials.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._lectorsTableAdapter.Update(updatedRows));
+                    result = (result + this._editorialsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1399,13 +1132,13 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(FinalitysDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(EditorialDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._lectorsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Lectors.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._editorialsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Editorials.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._lectorsTableAdapter.Update(addedRows));
+                    result = (result + this._editorialsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1417,13 +1150,13 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(FinalitysDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(EditorialDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._lectorsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Lectors.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._editorialsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Editorials.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._lectorsTableAdapter.Update(deletedRows));
+                    result = (result + this._editorialsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1459,15 +1192,15 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(FinalitysDataSet dataSet) {
+        public virtual int UpdateAll(EditorialDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._lectorsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._lectorsTableAdapter.Connection) == false))) {
+            if (((this._editorialsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._editorialsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1503,13 +1236,13 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._lectorsTableAdapter != null)) {
-                    revertConnections.Add(this._lectorsTableAdapter, this._lectorsTableAdapter.Connection);
-                    this._lectorsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._lectorsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._lectorsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._lectorsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._lectorsTableAdapter.Adapter);
+                if ((this._editorialsTableAdapter != null)) {
+                    revertConnections.Add(this._editorialsTableAdapter, this._editorialsTableAdapter.Connection);
+                    this._editorialsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._editorialsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._editorialsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._editorialsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._editorialsTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1570,9 +1303,9 @@ namespace CatalogoLibrosWeb.FinalitysDataSetTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._lectorsTableAdapter != null)) {
-                    this._lectorsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._lectorsTableAdapter]));
-                    this._lectorsTableAdapter.Transaction = null;
+                if ((this._editorialsTableAdapter != null)) {
+                    this._editorialsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._editorialsTableAdapter]));
+                    this._editorialsTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

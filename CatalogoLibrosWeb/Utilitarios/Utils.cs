@@ -133,6 +133,33 @@ namespace CatalogoLibrosWeb.Utilitarios
             return list;
         }
 
+        public static List<Prestamo> FiltrarPrestamo(int index, string criterio, DateTime desde, DateTime hasta)
+        {
+            Expression<Func<Prestamo, bool>> filtro = p => true;
+            RepositorioBase<Prestamo> repositorio = new RepositorioBase<Prestamo>();
+            List<Prestamo> list = new List<Prestamo>();
+
+            int id = ToInt(criterio);
+            switch (index)
+            {
+                case 0://Todo
+                    break;
+
+                case 1://Todo por fecha
+                    filtro = p => p.Fecha >= desde && p.Fecha <= hasta;
+                    break;
+
+                case 2://FacturaId
+                    filtro = p => p.PrestamoID == id && p.Fecha >= desde && p.Fecha <= hasta;
+                    break;
+
+            }
+
+            list = repositorio.GetList(filtro);
+
+            return list;
+        }
+
         /// aqui se programa el buscar de los lectores
         public static List<Lector> FiltrarLector(int index, string criterio, DateTime desde, DateTime hasta)
         {
@@ -255,8 +282,38 @@ namespace CatalogoLibrosWeb.Utilitarios
             return list;
         }
 
+        public static List<Libro> FLibro()
+        {
+            Expression<Func<Libro, bool>> filtro = p => true;
+            RepositorioBase<Libro> repositorio = new RepositorioBase<Libro>();
+            List<Libro> list = new List<Libro>();
 
+            list = repositorio.GetList(filtro);
 
+            return list;
+        }
+
+        public static List<Editorial> FEditorial()
+        {
+            Expression<Func<Editorial, bool>> filtro = p => true;
+            RepositorioBase<Editorial> repositorio = new RepositorioBase<Editorial>();
+            List<Editorial> list = new List<Editorial>();
+
+            list = repositorio.GetList(filtro);
+
+            return list;
+        }
+
+        public static List<Prestamo> FPrestamo()
+        {
+            Expression<Func<Prestamo, bool>> filtro = p => true;
+            RepositorioBase<Prestamo> repositorio = new RepositorioBase<Prestamo>();
+            List<Prestamo> list = new List<Prestamo>();
+
+            list = repositorio.GetList(filtro);
+
+            return list;
+        }
 
     }
 }

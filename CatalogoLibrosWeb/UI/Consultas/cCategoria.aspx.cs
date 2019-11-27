@@ -24,9 +24,9 @@ namespace CatalogoLibrosWeb.UI.Consultas
         {
             MyReportViewer.ProcessingMode = ProcessingMode.Local;
             MyReportViewer.Reset();
-            MyReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\UI\Reportes\ListadosCategoria.rdlc");
+            MyReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\UI\Reportes\ListadoCategoria.rdlc");
             MyReportViewer.LocalReport.DataSources.Clear();
-            MyReportViewer.LocalReport.DataSources.Add(new ReportDataSource("CategoriaDss", Utils.FCategoria()));
+            MyReportViewer.LocalReport.DataSources.Add(new ReportDataSource("CategoriaDataSet", Utils.FCategoria()));
             MyReportViewer.LocalReport.Refresh();
         }
 

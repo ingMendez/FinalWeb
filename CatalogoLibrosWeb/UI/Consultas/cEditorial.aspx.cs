@@ -1,4 +1,5 @@
 ﻿using CatalogoLibrosWeb.Utilitarios;
+using Microsoft.Reporting.WebForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,16 @@ namespace CatalogoLibrosWeb.UI.Consultas
             int.TryParse(valor.ToString(), out retorno);
 
             return retorno;
+        }
+
+        public void LlenaReport()
+        {
+            MyReportViewer.ProcessingMode = ProcessingMode.Local;
+            MyReportViewer.Reset();
+            MyReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\UI\Reportes\ListadoEditorial.rdlc");
+            MyReportViewer.LocalReport.DataSources.Clear();
+            MyReportViewer.LocalReport.DataSources.Add(new ReportDataSource("EditorialDS", Utils.FEditorial()));
+            MyReportViewer.LocalReport.Refresh();
         }
 
         protected void buscarLinkButton_Click(object sender, EventArgs e)

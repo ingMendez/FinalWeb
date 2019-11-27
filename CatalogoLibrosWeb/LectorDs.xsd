@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="FinalitysDataSet" targetNamespace="http://tempuri.org/FinalitysDataSet.xsd" xmlns:mstns="http://tempuri.org/FinalitysDataSet.xsd" xmlns="http://tempuri.org/FinalitysDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="LectorDs" targetNamespace="http://tempuri.org/LectorDs.xsd" xmlns:mstns="http://tempuri.org/LectorDs.xsd" xmlns="http://tempuri.org/LectorDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -75,7 +75,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="FinalitysDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="FinalitysDataSet" msprop:Generator_UserDSName="FinalitysDataSet">
+  <xs:element name="LectorDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="LectorDs" msprop:Generator_UserDSName="LectorDs">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Lectors" msprop:Generator_TableClassName="LectorsDataTable" msprop:Generator_TableVarName="tableLectors" msprop:Generator_TablePropName="Lectors" msprop:Generator_RowDeletingName="LectorsRowDeleting" msprop:Generator_RowChangingName="LectorsRowChanging" msprop:Generator_RowEvHandlerName="LectorsRowChangeEventHandler" msprop:Generator_RowDeletedName="LectorsRowDeleted" msprop:Generator_UserTableName="Lectors" msprop:Generator_RowChangedName="LectorsRowChanged" msprop:Generator_RowEvArgName="LectorsRowChangeEvent" msprop:Generator_RowClassName="LectorsRow">

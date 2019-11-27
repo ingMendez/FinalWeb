@@ -1,10 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cCategoria.aspx.cs" Inherits="CatalogoLibrosWeb.UI.Consultas.cCategoria" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+      <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %><%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="card-header text-uppercase text-center">Consultar Categoria</div>
     <div class="card-body">
         <div class="form-row justify-content-center">
@@ -62,7 +61,7 @@
         <div class="card-footer">
             <div class="justify-content-start">
                 <div class="form-group" style="display: inline-block">
-                    <asp:LinkButton ID="ImprimirLinkButton" CssClass="btn btn-info mt-4" runat="server">
+                    <asp:LinkButton ID="ImprimirLinkButton" CssClass="btn btn-info mt-4" runat="server" data-toggle="modal" data-target=".bd-example-modal-lg">
                             <span class="fas fa-print"></span>
                             Imprimir
                     </asp:LinkButton>
@@ -80,8 +79,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <%--Viewer--%>
-                        <rsweb:reportviewer id="MyReportViewer" runat="server" processingmode="Local" height="400px" width="750px">
+                        <%--Viewer--%>                     
+                        <rsweb:reportviewer ID="MyReportViewer" runat="server" ProcessingMode="Local" Height="400px" Width="750px">
                             <ServerReport ReportPath="" ReportServerUrl="" />
                         </rsweb:reportviewer>
                     </div>
@@ -91,5 +90,4 @@
             </div>
         </div>
     </div>
-
 </asp:Content>
