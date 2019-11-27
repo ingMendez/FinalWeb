@@ -1,4 +1,5 @@
 ﻿using CatalogoLibrosWeb.Utilitarios;
+using Microsoft.Reporting.WebForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,17 @@ namespace CatalogoLibrosWeb.UI.Consultas
             {
                 DesdeTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
                 HastaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                LlenaReport();
             }
+        }
+        public void LlenaReport()
+        {
+            MyReportViewer.ProcessingMode = ProcessingMode.Local;
+            MyReportViewer.Reset();
+            MyReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\UI\Reportes\ListadosCategoria.rdlc");
+            MyReportViewer.LocalReport.DataSources.Clear();
+            MyReportViewer.LocalReport.DataSources.Add(new ReportDataSource("CategoriaDss", Utils.FCategoria()));
+            MyReportViewer.LocalReport.Refresh();
         }
 
         private int ToInt(object valor)

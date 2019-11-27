@@ -243,5 +243,20 @@ namespace CatalogoLibrosWeb.Utilitarios
 
             return list;
         }
+
+        public static List<Categoria> FCategoria()
+        {
+            Expression<Func<Categoria, bool>> filtro = p => true;
+            RepositorioBase<Categoria> repositorio = new RepositorioBase<Categoria>();
+            List<Categoria> list = new List<Categoria>();
+
+            list = repositorio.GetList(filtro);
+
+            return list;
+        }
+
+
+
+
     }
 }
