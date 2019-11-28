@@ -958,7 +958,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Listado de Categoria</Value>
+                <Value>Listado de Libros</Value>
                 <Style>
                   <FontStyle>Italic</FontStyle>
                   <FontSize>12pt</FontSize>
@@ -1062,7 +1062,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.90625in</Height>
     <Style />
   </Body>
   <Width>8.14027in</Width>
@@ -1215,7 +1215,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.97cm</Top>
+          <Top>0.0175cm</Top>
           <Left>17.57146cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
@@ -1247,7 +1247,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox16</rd:DefaultName>
-          <Top>0.97cm</Top>
+          <Top>0.0175cm</Top>
           <Left>16.74717cm</Left>
           <Height>0.6cm</Height>
           <Width>1.20262cm</Width>

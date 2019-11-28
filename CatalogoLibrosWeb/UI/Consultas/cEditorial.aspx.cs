@@ -17,6 +17,7 @@ namespace CatalogoLibrosWeb.UI.Consultas
             {
                 DesdeTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
                 HastaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                LlenaReport();
             }
         }
 
@@ -34,7 +35,7 @@ namespace CatalogoLibrosWeb.UI.Consultas
             MyReportViewer.Reset();
             MyReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\UI\Reportes\ListadoEditorial.rdlc");
             MyReportViewer.LocalReport.DataSources.Clear();
-            MyReportViewer.LocalReport.DataSources.Add(new ReportDataSource("EditorialDS", Utils.FEditorial()));
+            MyReportViewer.LocalReport.DataSources.Add(new ReportDataSource("EditorialDs", Utils.FEditorial()));
             MyReportViewer.LocalReport.Refresh();
         }
 

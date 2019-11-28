@@ -266,6 +266,17 @@
     <Content Include="EditorialDataSet.xsc">
       <DependentUpon>EditorialDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="DataSetssss.xsc">
+      <DependentUpon>DataSetssss.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSetssss.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetssss.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DataSetssss.xss">
+      <DependentUpon>DataSetssss.xsd</DependentUpon>
+    </Content>
     <None Include="EditorialDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>EditorialDataSet.Designer.cs</LastGenOutput>
@@ -316,6 +327,7 @@
     <Content Include="PrestamoDataSet.xss">
       <DependentUpon>PrestamoDataSet.xsd</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\CatalogoLibrosDjñanga- Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -365,6 +377,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CategoriaDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetssss.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetssss.xsd</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

@@ -968,7 +968,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Listado de Categoria</Value>
+                <Value>Listado de Lectores</Value>
                 <Style>
                   <FontStyle>Italic</FontStyle>
                   <FontSize>12pt</FontSize>
@@ -1214,10 +1214,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.89641cm</Top>
           <Left>16.79787cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>2.82379cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1246,10 +1245,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox16</rd:DefaultName>
-          <Top>0.89641cm</Top>
           <Left>15.97359cm</Left>
           <Height>0.6cm</Height>
-          <Width>1.20262cm</Width>
+          <Width>1.52641cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>

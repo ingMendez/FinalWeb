@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %><%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
- <div class="card-header text-uppercase text-center">Consultar Usuario</div>
+ <div class="card-header text-uppercase text-center">Consultar Prestamos</div>
         <div class="card-body">
             <div class="form-row justify-content-center">
                 <%--Filtro--%>
@@ -46,12 +46,11 @@
                         <asp:GridView ID="ConsultaGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
                             <AlternatingRowStyle BackColor="LightSkyBlue" />
                             <Columns>
-                                <asp:BoundField DataField="UsuarioId" HeaderText="Usario Id" />
-                                <asp:BoundField DataField="Nombres" HeaderText="Nombre" />
-                                <asp:BoundField DataField="NoTelefono" HeaderText="Telefono" />
-                                <asp:BoundField DataField="Email" HeaderText="Email"/>
-                                <asp:BoundField DataField="pocision" HeaderText="PersonaId" />
-                                <asp:BoundField DataField="FechaCreacion" HeaderText="PersonaId" />
+                                <asp:BoundField DataField="PrestamoID" HeaderText="Prestamo Id" />
+                                <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
+                                <asp:BoundField DataField="LectorID" HeaderText="LectorID" />
+                                <asp:BoundField DataField="TotalLibros" HeaderText="TotalLibros"/>
+                          
                             </Columns>
                             <HeaderStyle BackColor="LightGreen" Font-Bold="True" />
                         </asp:GridView>
