@@ -361,6 +361,7 @@
     <Content Include="UI\Consultas\cLector.aspx" />
     <Content Include="UI\Consultas\cLibro.aspx" />
     <Content Include="UI\Consultas\cPrestamo.aspx" />
+    <Content Include="UI\Consultas\cUsuario.aspx" />
     <Content Include="UI\Registros\rCategoria.aspx" />
     <Content Include="UI\Registros\rEditorial.aspx" />
     <Content Include="UI\Registros\rLector.aspx" />
@@ -476,6 +477,13 @@
     <Compile Include="UI\Consultas\cPrestamo.aspx.designer.cs">
       <DependentUpon>cPrestamo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\cUsuario.aspx.cs">
+      <DependentUpon>cUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cUsuario.aspx.designer.cs">
+      <DependentUpon>cUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rCategoria.aspx.cs">
       <DependentUpon>rCategoria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -530,6 +538,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UsuarioDss.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuarioDss.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Utilitarios\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -556,6 +569,17 @@
     </None>
     <Content Include="UsuarioDataSet.xss">
       <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="UsuarioDss.xsc">
+      <DependentUpon>UsuarioDss.xsd</DependentUpon>
+    </Content>
+    <None Include="UsuarioDss.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsuarioDss.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="UsuarioDss.xss">
+      <DependentUpon>UsuarioDss.xsd</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -596,6 +620,9 @@
     <Content Include="UI\Reportes\ListadoLector.rdlc" />
     <Content Include="UI\Reportes\ListadoLibro.rdlc" />
     <Content Include="UI\Reportes\ListadoPrestamo.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UI\Reportes\ListadoUsuario.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

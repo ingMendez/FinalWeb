@@ -33,7 +33,7 @@
                     <div class="form-group row control-label" style="align-items: center;">
                         <label style="font-size: small;" for="NombreTextBox" class="col-md-1 input-sm">Nombre Editorial </label>
                         <div class="col-md-3 col-sm-6 col-xs-6">
-                            <asp:TextBox ID="NombreTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>
+                            <asp:TextBox ID="NombreTextBox" runat="server" class="form-control input-sm" placeholder="Nombre Editorial" Style="font-size: medium"></asp:TextBox>
                         </div>
                     </div>
                     <%--hasta aqui--%>
@@ -41,7 +41,7 @@
                     <div class="form-group row control-label" style="align-items: center;">
                         <label style="font-size: small;" for="DireccionTextBox" class="col-md-1   input-sm">Direccion</label>
                         <div class="col-md-3 col-sm-6 col-xs-6">
-                            <asp:TextBox ID="DireccionTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>
+                            <asp:TextBox ID="DireccionTextBox" runat="server" class="form-control input-sm" placeholder="Direccion" Style="font-size: medium"></asp:TextBox>
                         </div>
                     </div>
                     <%--hasta aqui--%>

@@ -34,7 +34,7 @@
             <div class="form-group row control-label" style="align-items: center;">
                 <label for="NombreTextBox" class="col-md-1 input-sm" style="font-size: medium">Nombre</label>
                 <div class="col-md-3 col-sm-6 col-xs-6">
-                    <asp:TextBox ID="NombreTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>
+                    <asp:TextBox ID="NombreTextBox" runat="server" class="form-control input-sm" placeholder="Nombre" Style="font-size: medium"></asp:TextBox>
                 </div>
             </div>
             <%--hasta aqui--%>
@@ -43,7 +43,7 @@
             <div class="form-group row control-label" style="align-items: center;">
                 <label style="font-size: medium;" for="MatriculaTextBox" class="col-md-1   input-sm">Matricula</label>
                 <div class="col-md-3 col-sm-6 col-xs-6">
-                    <asp:TextBox ID="MatriculaTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox ID="MatriculaTextBox" runat="server" class="form-control input-sm" placeholder="Matricula" Style="font-size: medium" TextMode="Number"></asp:TextBox>
                 </div>
             </div>
             <%--hasta aqui--%>
@@ -52,7 +52,7 @@
             <div class="form-group  row control-label" style="align-items: center;">
                 <label for="CedulaTextBox" class="col-md-1 input-sm" style="font-size: medium">Cedula</label>
                 <div class="col-md-3 col-sm-6 col-xs-6">
-                    <asp:TextBox ID="CedulaTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox ID="CedulaTextBox" runat="server" class="form-control input-sm" placeholder="Cedula" Style="font-size: medium" TextMode="Number"></asp:TextBox>
                 </div>
             </div>
             <%--hasta aqui--%>
@@ -64,7 +64,7 @@
                     <div class="form-group row control-label" style="align-items: center;">
                         <label style="font-size: medium;" for="TelefonoTextBox" class="col-md-1   input-sm">Telefono</label>
                         <div class="col-md-3 col-sm-6 col-xs-6">
-                            <asp:TextBox ID="TelefonoTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Number"></asp:TextBox>
+                            <asp:TextBox ID="TelefonoTextBox" runat="server" class="form-control input-sm" placeholder="# Cell-phone" Style="font-size: medium" TextMode="Number"></asp:TextBox>
                         </div>
                     </div>
                     <%--hasta aqui--%>
@@ -72,14 +72,14 @@
                     <div class="form-group row control-label" style="align-items: center;">
                         <label style="font-size: medium;" for="Email" class="col-md-1   input-sm">Email</label>
                         <div class="col-md-3 col-sm-6 col-xs-6">
-                            <asp:TextBox ID="EmailTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Email" type="required"></asp:TextBox>
+                            <asp:TextBox ID="EmailTextBox" runat="server" class="form-control input-sm" placeholder=" Email" Style="font-size: medium" TextMode="Email" type="required"></asp:TextBox>
                         </div>
                     </div>
                     <%--Contraña--%>
                     <div class="form-group row control-label" style="align-items: center;">
                         <label style="font-size: medium;" for="Password" class="col-md-1   input-sm">Password</label>
                         <div class="col-md-3 col-sm-6 col-xs-6">
-                            <asp:TextBox ID="PasswordTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="PasswordTextBox" runat="server" class="form-control input-sm" placeholder="Password" Style="font-size: medium" TextMode="Password"></asp:TextBox>
                         </div>
                         <asp:CustomValidator ID="PasswwordCustomValidator" runat="server" ErrorMessage="Contraseñas no coinciden" ControlToValidate="ConfirmarPassword" ForeColor="Red" SetFocusOnError="True"></asp:CustomValidator>
 
@@ -88,14 +88,14 @@
                     <div class="form-group row control-label" style="align-items: center;">
                         <label style="font-size: medium;" for="Email" class="col-md-1   input-sm">Confirmar Contraña</label>
                         <div class="col-md-3 col-sm-6 col-xs-6">
-                            <asp:TextBox ID="ConfirmarPassword" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="ConfirmarPassword" runat="server" class="form-control input-sm" placeholder="Confirmar Password" Style="font-size: medium" TextMode="Password"></asp:TextBox>
                         </div>
                     </div>
                     <%--TotalLibros--%>
                     <div class="form-group row control-label" style="align-items: center;">
                         <label style="font-size: medium;" for="DireccionTextBox" class="col-md-1   input-sm">Direccion</label>
                         <div class="col-md-3 col-sm-6 col-xs-6">
-                            <asp:TextBox ID="DireccionTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="SingleLine"></asp:TextBox>
+                            <asp:TextBox ID="DireccionTextBox" runat="server" class="form-control input-sm" placeholder="Direccion" Style="font-size: medium" TextMode="SingleLine"></asp:TextBox>
                         </div>
                     </div>
                     <%--hasta aqui--%>

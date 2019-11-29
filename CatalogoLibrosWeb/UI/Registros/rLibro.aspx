@@ -31,7 +31,7 @@
             <div class="form-group row control-label" style="align-items: center;">
                 <label for="NombreTextBox" class="col-md-1 input-sm" style="font-size: medium">Nombre</label>
                 <div class="col-md-3 col-sm-6 col-xs-6">
-                    <asp:TextBox ID="NombreTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>
+                    <asp:TextBox ID="NombreTextBox" runat="server" class="form-control input-sm" placeholder="Nombre Libro" Style="font-size: medium"></asp:TextBox>
                 </div>
             </div>
             <%--hasta aqui--%>
@@ -39,7 +39,7 @@
             <div class="form-group row control-label" style="align-items: center;">
                 <label style="font-size: medium;" for="ISBNTextBox" class="col-md-1   input-sm">ISBN</label>
                 <div class="col-md-3 col-sm-6 col-xs-6">
-                    <asp:TextBox ID="ISBNTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" ></asp:TextBox>
+                    <asp:TextBox ID="ISBNTextBox" runat="server" class="form-control input-sm" placeholder="ISBN" Style="font-size: medium" ></asp:TextBox>
                 </div>
             </div>
             <%--hasta aqui--%>
@@ -47,7 +47,7 @@
             <div class="form-group  row control-label" style="align-items: center;">
                 <label for="CategoriaDropDownList" class="col-md-1 input-sm" style="font-size: medium">Categoria</label>
                 <div class="col-md-3 col-sm-6 col-xs-6">
-                    <asp:DropDownList ID="CategoriaDropDownList" class="form-control input-sm " Style="font-size: medium" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="CategoriaDropDownList" class="form-control input-sm " placeholder="Categoria" Style="font-size: medium" runat="server"></asp:DropDownList>
                 </div>
                 <div class="col-md-1 col-sm-2 col-xs-4">
                     <asp:Button ID="AgregarButton" runat="server" Text="+" class="btn btn-warning btn-md" Font-Size="Medium" OnClick="AgregarButton_Click" />
@@ -62,7 +62,7 @@
                     <div class="form-group row control-label" style="align-items: center;">
                         <label style="font-size: small;" for="DescripcionTextBox" class="col-md-1   input-sm">Descripcion</label>
                         <div class="col-md-3 col-sm-6 col-xs-6">
-                            <asp:TextBox ID="DescripcionTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>
+                            <asp:TextBox ID="DescripcionTextBox" runat="server" class="form-control input-sm"  placeholder="Descripcion" Style="font-size: medium"></asp:TextBox>
                         </div>
                     </div>
                     <%--hasta aqui--%>
@@ -70,7 +70,7 @@
                     <div class="form-group  row control-label" style="align-items: center;">
                         <label for="EditorialDropDownList" class="col-md-1 input-sm" style="font-size: medium">Editorial</label>
                         <div class="col-md-3 col-sm-6 col-xs-6">
-                            <asp:DropDownList ID="EditorialDropDownList" class="form-control input-sm " Style="font-size: medium" runat="server"></asp:DropDownList>
+                            <asp:DropDownList ID="EditorialDropDownList" class="form-control input-sm "  placeholder="Editorial" Style="font-size: medium" runat="server"></asp:DropDownList>
                         </div>
                         <div class="col-md-1 col-sm-2 col-xs-4">
                             <asp:Button ID="AgregarEditButton" runat="server" Text="+" class="btn btn-warning btn-md" Font-Size="Medium" OnClick="AgregarEditButton_Click" />
