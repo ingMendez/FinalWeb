@@ -281,6 +281,16 @@ namespace CatalogoLibrosWeb.Utilitarios
 
             return list;
         }
+        public static List<Usuario> FUsuario()
+        {
+            Expression<Func<Usuario, bool>> filtro = p => true;
+            RepositorioBase<Usuario> repositorio = new RepositorioBase<Usuario>();
+            List<Usuario> list = new List<Usuario>();
+
+            list = repositorio.GetList(filtro);
+
+            return list;
+        }
 
         public static List<Libro> FLibro()
         {

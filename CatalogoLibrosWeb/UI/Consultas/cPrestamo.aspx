@@ -81,7 +81,7 @@
                 </div>
                 <div class="modal-body">
                     <%--Viewer--%>
-                    <rsweb:reportviewer id="MyReportViewer" runat="server" processingmode="Local" height="400px" width="750px">
+                    <rsweb:reportviewer id="MyReportViewer" runat="server" processingmode="Remote" height="400px" width="750px">
                             <ServerReport ReportPath="" ReportServerUrl="" />
                         </rsweb:reportviewer>
                 </div>

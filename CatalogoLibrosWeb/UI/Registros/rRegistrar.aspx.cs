@@ -5,16 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CatalogoLibrosWeb
+namespace CatalogoLibrosWeb.UI.Registros
 {
-    public partial class Logon : System.Web.UI.Page
+    public partial class rRegistrar : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void EntrarButton_Click(object sender, EventArgs e)
         {
 
         }

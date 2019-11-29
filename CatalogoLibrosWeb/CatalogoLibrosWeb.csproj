@@ -361,12 +361,12 @@
     <Content Include="UI\Consultas\cLector.aspx" />
     <Content Include="UI\Consultas\cLibro.aspx" />
     <Content Include="UI\Consultas\cPrestamo.aspx" />
-    <Content Include="UI\Consultas\cUsuario.aspx" />
     <Content Include="UI\Registros\rCategoria.aspx" />
     <Content Include="UI\Registros\rEditorial.aspx" />
     <Content Include="UI\Registros\rLector.aspx" />
     <Content Include="UI\Registros\rLibro.aspx" />
     <Content Include="UI\Registros\rPrestamo.aspx" />
+    <Content Include="UI\Registros\rRegistrar.aspx" />
     <Content Include="UI\Registros\rUsuario.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -476,13 +476,6 @@
     <Compile Include="UI\Consultas\cPrestamo.aspx.designer.cs">
       <DependentUpon>cPrestamo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UI\Consultas\cUsuario.aspx.cs">
-      <DependentUpon>cUsuario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI\Consultas\cUsuario.aspx.designer.cs">
-      <DependentUpon>cUsuario.aspx</DependentUpon>
-    </Compile>
     <Compile Include="UI\Registros\rCategoria.aspx.cs">
       <DependentUpon>rCategoria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -518,12 +511,24 @@
     <Compile Include="UI\Registros\rPrestamo.aspx.designer.cs">
       <DependentUpon>rPrestamo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\rRegistrar.aspx.cs">
+      <DependentUpon>rRegistrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rRegistrar.aspx.designer.cs">
+      <DependentUpon>rRegistrar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rUsuario.aspx.cs">
       <DependentUpon>rUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UI\Registros\rUsuario.aspx.designer.cs">
       <DependentUpon>rUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Utilitarios\Utils.cs" />
   </ItemGroup>
@@ -541,6 +546,17 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="UsuarioDataSet.xsc">
+      <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="UsuarioDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsuarioDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="UsuarioDataSet.xss">
+      <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
